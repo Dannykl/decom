@@ -4,6 +4,7 @@ import {
   PRODUCTS_LOAD_FAIL
 } from "./actionsTypes";
 import axios from "axios";
+import * as constants from "../../utils/constants";
 
 export const productsLoadingRequest = () => ({
   type: PRODUCTS_LOAD_REQUEST
@@ -23,7 +24,7 @@ export const fetchProducts = () => {
   return dispatch => {
     dispatch(productsLoadingRequest());
     axios
-      .get("https://guarded-ridge-50822.herokuapp.com/api/v1/item")
+      .get(constants.url + "/item")
       .then(response => dispatch(productsLoadingSuccess(response)))
       .catch(error => dispatch(productsLoadingFail(error.message)));
   };
