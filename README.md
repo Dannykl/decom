@@ -1,3 +1,6 @@
+### `Demo` 
+it is still under development https://inventory-management-da377.web.app
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
