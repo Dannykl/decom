@@ -1,5 +1,5 @@
 ### `Demo` 
-it is still under development https://inventory-management-da377.web.app
+It is still under development https://inventory-management-da377.web.app
 
 ### `npm start`
 
