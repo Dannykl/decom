@@ -5,6 +5,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Products from "./product/ProductsPage";
 import { history } from "../utils/history";
 import Header from "./common/Header";
+import Footer from "./common/Footer";
 
 // function Loading({ error }) {
 //   if (error) {
@@ -31,6 +32,7 @@ function App() {
           {/* <Route component={DefaultContainer} /> */}
         </Switch>
       </Router>
+      <Footer />
     </div>
   );
 }
