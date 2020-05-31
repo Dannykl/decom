@@ -1,0 +1,19 @@
+@import "../../styles/colours.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/screen.scss";
+
+// .products-wrapper {
+
+// }
+
+.image {
+  width: 100%;
+  height: 400px;
+}
+.product-card-bottom {
+  display: flex;
+  justify-content: space-around;
+}
+.product-card-icons {
+  padding-left: 25%;
+}
