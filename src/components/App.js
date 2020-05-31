@@ -4,6 +4,7 @@ import Loadable from "react-loadable";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Products from "./product/ProductsPage";
 import { history } from "../utils/history";
+import Header from "./common/Header";
 
 // function Loading({ error }) {
 //   if (error) {
@@ -21,7 +22,7 @@ import { history } from "../utils/history";
 function App() {
   return (
     <div className="container-fluid">
-      {/* <Header /> */}
+      <Header />
       <Router history={history}>
         {/* <Router> */}
         <Switch>
