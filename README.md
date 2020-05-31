@@ -1,4 +1,9 @@
-### `Demo` 
+### `Ecommerce web application`
+
+It's a simple ecommerce web application - please note it's still under development. It consumes data from web services I have implemented.
+
+### `Demo`
+
 It is still under development https://inventory-management-da377.web.app
 
 ### `npm start`
