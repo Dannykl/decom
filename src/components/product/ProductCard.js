@@ -12,29 +12,31 @@ import ShareIcon from "@material-ui/icons/Share";
 
 const ProductCard = ({ data, selectedProduct }) => {
   return (
-    <Card onClick={() => selectedProduct(data)}>
-      <CardMedia>
-        <img src={data.image} alt="face mask" className="image" />
-      </CardMedia>
-      <div className="product-card-bottom">
-        <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {data.description} {data.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {"£" + data.price}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing className="product-card-icons">
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-        </CardActions>
-      </div>
-    </Card>
+    <div className="product-card-container">
+      <Card onClick={() => selectedProduct(data)}>
+        <CardMedia>
+          <img src={data.image} alt="face mask" className="image" />
+        </CardMedia>
+        <div className="product-card-bottom">
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {data.description} {data.name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {"£" + data.price}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing className="product-card-icons">
+            <IconButton aria-label="add to favorites" className="favorite-icon">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share" className="share-icon">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
+        </div>
+      </Card>
+    </div>
   );
 };
 

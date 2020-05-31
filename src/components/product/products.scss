@@ -17,3 +17,19 @@
 .product-card-icons {
   padding-left: 25%;
 }
+.product-card-container {
+  margin-top: 2%;
+}
+.favorite-icon:focus {
+  outline: 0;
+}
+.share-icon:focus {
+  outline: 0;
+}
+.loading {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  font-size: large;
+  font-weight: bolder;
+}
