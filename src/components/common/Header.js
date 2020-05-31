@@ -1,10 +1,12 @@
 import React from "react";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import "./common.scss";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light header-container">
       <a className="navbar-brand" href="#">
-        Decom
+        LOGO
       </a>
       <button
         className="navbar-toggler"
@@ -75,6 +77,7 @@ const Header = () => {
             Search
           </button>
         </form>
+        <ShoppingCartIcon />
       </div>
     </nav>
   );
