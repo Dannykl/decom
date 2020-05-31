@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchProducts } from "../../store/actions/productAction";
 import "./products.scss";
-import ProductsList from "./ProductsList";
 import ProductCard from "./ProductCard";
 import * as constants from "../../utils/constants";
 
@@ -18,18 +17,17 @@ export class ProductsPage extends React.Component {
       // this.props.fetchProducts();
     }
   }
-
+  handleProductClick = aProduct => {
+    console.log("product is clickeddd ", aProduct);
+  };
   render() {
     const { availableProducts } = this.props;
-    console.log("props >>>", availableProducts);
     return (
       <div className="container-fluid products-wrapper">
         {availableProducts.loadingProducts ? (
           <div>Loading...</div>
         ) : (
           <div>
-            <div>hello</div>
-            {/* <ProductsList data={availableProducts.products} /> */}
             <div className="row">
               {constants.productsObjs.products.map(i => (
                 <div
@@ -37,7 +35,10 @@ export class ProductsPage extends React.Component {
                   id="card-item"
                   className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
                 >
-                  <ProductCard data={i} />
+                  <ProductCard
+                    data={i}
+                    selectedProduct={this.handleProductClick}
+                  />
                 </div>
               ))}
             </div>

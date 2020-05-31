@@ -10,20 +10,19 @@ import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 
-const ProductCard = data => {
-  console.log("data is ", data.data.image);
+const ProductCard = ({ data, selectedProduct }) => {
   return (
-    <Card>
+    <Card onClick={() => selectedProduct(data)}>
       <CardMedia>
-        <img src={data.data.image} alt="face mask" className="image" />
+        <img src={data.image} alt="face mask" className="image" />
       </CardMedia>
       <div className="product-card-bottom">
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {data.data.description} {data.data.name}
+            {data.description} {data.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {"£" + data.data.price}
+            {"£" + data.price}
           </Typography>
         </CardContent>
         <CardActions disableSpacing className="product-card-icons">
@@ -40,6 +39,7 @@ const ProductCard = data => {
 };
 
 ProductCard.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  selectedProduct: PropTypes.func
 };
 export default ProductCard;
