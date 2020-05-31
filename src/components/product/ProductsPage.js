@@ -15,7 +15,7 @@ export class ProductsPage extends React.Component {
 
   componentDidMount() {
     if (Object.keys(this.props.availableProducts.products).length == 0) {
-      this.props.fetchProducts();
+      // this.props.fetchProducts();
     }
   }
   handleProductClick = aProduct => {
@@ -27,14 +27,13 @@ export class ProductsPage extends React.Component {
       <div className="container-fluid products-wrapper">
         {availableProducts.loadingProducts ? (
           <div id="loading" className="loading">
-            Loading...
             <Spinner />
           </div>
         ) : (
           <div>
             <div className="row">
-              {this.props.availableProducts.products.map(i => (
-                // {constants.productsObjs.products.map(i => (
+              {/* {this.props.availableProducts.products.map(i => ( */}
+              {constants.productsObjs.products.map(i => (
                 <div
                   key={i.id}
                   id="card-item"
