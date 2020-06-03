@@ -31,13 +31,16 @@ export class ProductsPage extends React.Component {
           </div>
         ) : (
           <div>
+            <div className="sale-wrapper">
+              <p>SALE</p>
+            </div>
             <div className="row">
               {/* {this.props.availableProducts.products.map(i => ( */}
               {constants.productsObjs.products.map(i => (
                 <div
                   key={i.id}
                   id="card-item"
-                  className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
+                  className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
                 >
                   <ProductCard
                     data={i}
