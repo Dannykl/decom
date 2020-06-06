@@ -19,31 +19,20 @@
   justify-content: center;
   width: 100%;
 }
+
+.cart-icon:focus {
+  outline: 0;
+}
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-  .header-container {
-    margin-top: 1%;
-    height: 100px;
-    background-color: $amber;
-  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .header-container {
-    margin-top: 1%;
-    height: 100px;
-    background-color: $amber;
-  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .header-container {
-    margin-top: 1%;
-    height: 100px;
-    background-color: $grey;
-  }
 }
 
 // Desk top small devices (small desktops, 992px and up)
@@ -52,13 +41,13 @@
 
 // large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) and(max-width:1439px) {
-  .header-container {
-    margin-top: 1%;
-    height: 100px;
-    background-color: $amber;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+  // .header-container {
+  //   margin-top: 1%;
+  //   height: 100px;
+  //   background-color: $amber;
+  //   padding-top: 10px;
+  //   padding-bottom: 10px;
+  // }
   .social-media-icon {
     display: flex;
     justify-content: space-between;
@@ -70,4 +59,7 @@
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
+}
+.login-button {
+  padding-top: 3px;
 }

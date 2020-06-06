@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./products.scss";
+import "../products.scss";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import LazyLoad from "react-lazyload";
-import Spinner from "../common/Spinner";
+import Spinner from "../../common/Spinner";
 
 const ProductCard = ({ data, selectedProduct }) => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
-import App from "./components/App";
+import App from "./module/App";
 import * as serviceWorker from "./serviceWorker";
-import configureStore from "./store/configureStore";
+import configureStore from "./global_store/configureStore";
 import { Provider as ReduxProvider } from "react-redux";
 
 const store = configureStore();

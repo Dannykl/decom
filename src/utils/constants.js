@@ -1,4 +1,5 @@
 export const url = "https://guarded-ridge-50822.herokuapp.com/api/v1";
+export const local_url = "http://localhost:8080/api/v1";
 
 export const productsObjs = {
   loadingProducts: false,

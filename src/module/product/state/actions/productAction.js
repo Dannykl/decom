@@ -4,7 +4,7 @@ import {
   PRODUCTS_LOAD_FAIL
 } from "./actionsTypes";
 import axios from "axios";
-import * as constants from "../../utils/constants";
+import * as constants from "../../../../utils/constants";
 
 export const productsLoadingRequest = () => ({
   type: PRODUCTS_LOAD_REQUEST
@@ -24,7 +24,8 @@ export const fetchProducts = () => {
   return dispatch => {
     dispatch(productsLoadingRequest());
     axios
-      .get(constants.url + "/item")
+      // .get(constants.url + "/item")
+      .get(constants.local_url + "/item")
       .then(response => dispatch(productsLoadingSuccess(response)))
       .catch(error => dispatch(productsLoadingFail(error.message)));
   };

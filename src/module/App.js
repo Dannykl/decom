@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Products from "./product/ProductsPage";
+import Products from "./product/components/ProductsPage";
 import { history } from "../utils/history";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
