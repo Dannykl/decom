@@ -9,6 +9,7 @@ import {
   Button
 } from "react-bootstrap";
 import Cart from "./Cart";
+import { reactLocalStorage } from "reactjs-localstorage";
 
 const Header = ({ currentPath }) => {
   return (
@@ -66,25 +67,34 @@ const Header = ({ currentPath }) => {
               <Button variant="outline-success">Search</Button>
             </Form>
             <NavDropdown
-              title="Login"
+              title="Account"
               id="basic-nav-dropdown"
-              className="login-button"
+              className="account"
             >
-              <Nav.Link
-                href="/admin"
-                active={currentPath == "/admin" ? "active" : ""}
-              >
-                Login
+              <Nav.Link style={{ textAlign: "center" }}>
+                <Navbar.Text>
+                  {reactLocalStorage.getObject("currentUser").userName}
+                </Navbar.Text>
               </Nav.Link>
-              <Nav.Link
-                href="/admin"
-                active={currentPath == "/admin" ? "active" : ""}
-              >
-                Signup
+
+              {Object.keys(reactLocalStorage.getObject("currentUser")).length ==
+              0 ? (
+                <Nav.Link href="/signin" style={{ textAlign: "center" }}>
+                  <button type="button" className="btn btn-success">
+                    Login
+                  </button>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/log-out" style={{ textAlign: "center" }}>
+                  <button type="button" className="btn btn-danger">
+                    Logout
+                  </button>
+                </Nav.Link>
+              )}
+              <Nav.Link href="/signup" style={{ textAlign: "center" }}>
+                <Navbar.Text>signup?</Navbar.Text>
               </Nav.Link>
             </NavDropdown>
-
-            {/* <Navbar.Text>Login</Navbar.Text> */}
             <Cart />
           </Nav>
         </Navbar.Collapse>

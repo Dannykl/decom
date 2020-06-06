@@ -23,6 +23,8 @@
 .cart-icon:focus {
   outline: 0;
 }
+.account {
+}
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
 }
@@ -60,6 +62,7 @@
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
 }
-.login-button {
+.account {
   padding-top: 3px;
 }
+

@@ -23,6 +23,7 @@
     "react-redux": "6.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "reactjs-localstorage": "^1.0.1",
     "redux": "4.0.1",
     "redux-thunk": "^2.3.0",
     "webpack-dev-server": "^3.11.0"
