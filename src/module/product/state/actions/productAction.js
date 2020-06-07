@@ -24,8 +24,7 @@ export const fetchProducts = () => {
   return dispatch => {
     dispatch(productsLoadingRequest());
     axios
-      // .get(constants.url + "/item")
-      .get(constants.local_url + "/item")
+      .get(constants.url + "/item")
       .then(response => dispatch(productsLoadingSuccess(response)))
       .catch(error => dispatch(productsLoadingFail(error.message)));
   };

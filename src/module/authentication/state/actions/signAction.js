@@ -25,7 +25,7 @@ export const signin = (_email, _password) => {
   return dispatch => {
     dispatch(loggingRequest(_email));
     axios
-      .post(constants.local_url + "/authenticate", data)
+      .post(constants.url + "/authenticate", data)
       .then(response =>
         dispatch(loggingSuccess(processingData(_email, response)))
       )
