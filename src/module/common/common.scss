@@ -2,54 +2,64 @@
 @import "../../styles/fonts.scss";
 @import "../../styles/screen.scss";
 
-.footer-top {
-  background-color: $light-grey;
-  height: 4em;
-  text-align: center;
-}
-.footer-bottom {
-  background-color: $light-amber;
-  height: 2em;
-  text-align: center;
-}
-.post-loading {
-  justify-content: center;
-}
-.post-loading svg {
-  justify-content: center;
-  width: 100%;
-}
-
-.cart-icon:focus {
-  outline: 0;
-}
-.account {
-}
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+  .header-search {
+    width: 65%;
+    margin-right: 1%;
+  }
+  .header-nav li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 767px) {
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .account-username {
+    text-align: left;
+  }
+  .account-signup {
+    text-align: left;
+  }
 }
 
 // Desk top small devices (small desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .header-search {
+    width: 100%;
+    margin-right: 1%;
+  }
 }
 
 // large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) and(max-width:1439px) {
-  // .header-container {
-  //   margin-top: 1%;
-  //   height: 100px;
-  //   background-color: $amber;
-  //   padding-top: 10px;
-  //   padding-bottom: 10px;
-  // }
+  .footer-top {
+    background-color: $light-grey;
+    height: 4em;
+    text-align: center;
+  }
+  .footer-bottom {
+    background-color: $light-amber;
+    height: 2em;
+    text-align: center;
+  }
+  .post-loading {
+    justify-content: center;
+  }
+  .post-loading svg {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cart-icon:focus {
+    outline: 0;
+  }
   .social-media-icon {
     display: flex;
     justify-content: space-between;
@@ -58,12 +68,54 @@
     padding: 10px 0;
     text-align: center;
   }
+  .account-signup {
+    text-align: center;
+  }
+  .account-btn {
+    text-align: center;
+  }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
+  .footer-top {
+    background-color: $light-grey;
+    height: 4em;
+    text-align: center;
+  }
+  .footer-bottom {
+    background-color: $light-amber;
+    height: 2em;
+    text-align: center;
+  }
+  .post-loading {
+    justify-content: center;
+  }
+  .post-loading svg {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cart-icon:focus {
+    outline: 0;
+  }
+  .social-media-icon {
+    display: flex;
+    justify-content: space-between;
+    max-width: 5em;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .account-signup {
+    text-align: center;
+  }
+  .account-btn {
+    text-align: center;
+  }
 }
+
 .account {
-  padding-top: 3px;
+  padding-top: 10px;
 }
 .header-logo {
   margin-right: 2%;

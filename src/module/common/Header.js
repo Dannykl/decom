@@ -22,7 +22,7 @@ const Header = ({ currentPath }) => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           {/* <Navbar.Text>LOGO</Navbar.Text> */}
-          <ul className="nav nav-pills ">
+          <ul className="nav nav-pills header-nav">
             <li>
               {" "}
               <Nav.Link
@@ -66,8 +66,12 @@ const Header = ({ currentPath }) => {
         </Nav>
         <Nav>
           <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Form inline className="header-form">
+            <FormControl
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2 header-search"
+            />
             <Button variant="outline-success">Search</Button>
           </Form>
           <NavDropdown
@@ -75,30 +79,32 @@ const Header = ({ currentPath }) => {
             id="basic-nav-dropdown"
             className="account"
           >
-            <Nav.Link href="#action/3.2">
-              <Navbar.Text className="account-username">
+            <Nav.Link href="#action/3.2" className="account-username">
+              <Navbar.Text>
                 {reactLocalStorage.getObject("currentUser").userName}
               </Navbar.Text>
             </Nav.Link>
             {Object.keys(reactLocalStorage.getObject("currentUser")).length ==
             0 ? (
-              <Nav.Link href="/signin" style={{ textAlign: "center" }}>
+              <Nav.Link href="/signin" className="account-btn">
                 <button type="button" className="btn btn-success">
                   Login
                 </button>
               </Nav.Link>
             ) : (
-              <Nav.Link href="/log-out" style={{ textAlign: "center" }}>
+              <Nav.Link href="/log-out" className="account-btn">
                 <button type="button" className="btn btn-danger">
                   Logout
                 </button>
               </Nav.Link>
             )}
-            <Nav.Link href="/signup" className="account-signuplink">
+            <Nav.Link href="/signup" className="account-signup">
               <Navbar.Text>Signup</Navbar.Text>
             </Nav.Link>
           </NavDropdown>
-          <Cart />
+          <Nav.Link>
+            <Cart className="cart-icon" />
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
