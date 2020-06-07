@@ -40,7 +40,7 @@ const Logout = Loadable({
 
 const DefaultContainer = () => (
   <div className="container-fluid">
-    <Header />
+    <Header currentPath={history.location.pathname} />
     <Router history={history}>
       {/* <Router> */}
       <Switch>

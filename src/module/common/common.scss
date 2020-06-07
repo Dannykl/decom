@@ -65,4 +65,24 @@
 .account {
   padding-top: 3px;
 }
+.header-logo {
+  margin-right: 2%;
+}
+.account-username {
+  font-size: 0.9em;
+}
+.account-signuplink {
+  text-align: center;
+  font-size: 0.8em;
+}
+.navbar .nav-pills > li > a {
+  color: black;
+}
+.navbar .nav-pills > li > a:hover {
+  border-bottom: 3px solid green;
+}
 
+.navbar .nav-pills .active {
+  background-color: transparent;
+  font-weight: bold;
+}
