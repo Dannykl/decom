@@ -5,13 +5,25 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .header-search {
-    width: 65%;
-    margin-right: 1%;
+    width: 100%;
   }
   .header-nav li {
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+  .header-container {
+    text-align: center;
+    display: flex;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-search-wrapper {
+    width: 100%;
   }
 }
 
@@ -130,11 +142,18 @@
 .navbar .nav-pills > li > a {
   color: black;
 }
-.navbar .nav-pills > li > a:hover {
+// .navbar .nav-pills > li > a:hover {
+//   border-bottom: 3px solid green;
+// }
+.header-nav a:hover {
   border-bottom: 3px solid green;
 }
 
-.navbar .nav-pills .active {
+.header-nav .active {
   background-color: transparent;
   font-weight: bold;
 }
+// .navbar .nav-pills .active {
+//   background-color: transparent;
+//   font-weight: bold;
+// }

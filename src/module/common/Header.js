@@ -10,72 +10,45 @@ import {
   Button
 } from "react-bootstrap";
 import Cart from "./Cart";
+import Favourite from "./Favourite";
+import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import { reactLocalStorage } from "reactjs-localstorage";
+
+import InputBase from "@material-ui/core/InputBase";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import DirectionsIcon from "@material-ui/icons/Directions";
+import TextField from "@material-ui/core/TextField";
+
+import Input from "@material-ui/core/Input";
 
 const Header = ({ currentPath }) => {
   return (
-    <Navbar collapseOnSelect expand="lg" className="header-container">
-      <Nav.Link href="/">
+    <Navbar bg="light" expand="lg" className="header-container">
+      <Navbar.Brand href="/">
         <Logo width={50} height={50} className="header-logo" />
-      </Nav.Link>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          {/* <Navbar.Text>LOGO</Navbar.Text> */}
-          <ul className="nav nav-pills header-nav">
-            <li>
-              {" "}
-              <Nav.Link
-                href="/sale"
-                active={currentPath == "/sale" ? "active" : ""}
-              >
-                Sale
-              </Nav.Link>
-            </li>
-            <li>
-              {" "}
-              <Nav.Link
-                href="/masks"
-                active={currentPath == "/masks" ? "active" : ""}
-              >
-                Masks
-              </Nav.Link>{" "}
-            </li>
-          </ul>
-          <NavDropdown title="Category" id="basic-nav-dropdown">
-            <NavDropdown.Item
-              href="/action"
-              active={currentPath == "/action" ? "active" : ""}
-            >
-              Action
-            </NavDropdown.Item>
-            <NavDropdown.Item
-              href="/another-action"
-              active={currentPath == "/another-action" ? "active" : ""}
-            >
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item
-              href="/separate-link"
-              active={currentPath == "/separate-link" ? "active" : ""}
-            >
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto header-nav">
+          <Nav.Link
+            href="/sale"
+            active={currentPath == "/sale" ? "active" : ""}
+          >
+            Sale
+          </Nav.Link>
+          <Nav.Link
+            href="/masks"
+            active={currentPath == "/masks" ? "active" : ""}
+          >
+            Masks
+          </Nav.Link>
         </Nav>
         <Nav>
-          <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
-          <Form inline className="header-form">
-            <FormControl
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2 header-search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
           <NavDropdown
-            title="Account"
+            title={<PermIdentityIcon />}
             id="basic-nav-dropdown"
             className="account"
           >
@@ -103,10 +76,29 @@ const Header = ({ currentPath }) => {
             </Nav.Link>
           </NavDropdown>
           <Nav.Link>
+            <Favourite className="favourite-icon" />
+          </Nav.Link>
+          <Nav.Link>
             <Cart className="cart-icon" />
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      <Nav className="header-search-wrapper">
+        <div className="header-search-container">
+          <Input
+            placeholder="Search"
+            className="header-search"
+            inputProps={{ "aria-label": "description" }}
+          />
+          <IconButton
+            type="submit"
+            // className={classes.iconButton}
+            aria-label="search"
+          >
+            <SearchIcon />
+          </IconButton>
+        </div>
+      </Nav>
     </Navbar>
   );
 };

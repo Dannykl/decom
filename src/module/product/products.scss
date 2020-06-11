@@ -22,30 +22,22 @@
 .share-icon:focus {
   outline: 0;
 }
-.loading {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  font-size: large;
-  font-weight: bolder;
-}
-.sale-wrapper {
-  background-color: $red;
-  height: 100%;
-}
-.sale-wrapper p {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  padding-left: 40%;
-  color: $white;
-  font-size: $font-size-vg;
-}
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .image {
     width: 100%;
     height: 200px;
+  }
+  .sale-wrapper {
+    background-color: $red;
+    height: 100%;
+  }
+  .sale-wrapper p {
+    padding-left: 10%;
+    color: $white;
+    font-size: $font-size-xvg;
+    text-align: center;
   }
 }
 
@@ -55,6 +47,22 @@
     width: 100%;
     height: 200px;
   }
+  .sale-wrapper {
+    background-color: $red;
+    height: 100%;
+  }
+  .sale-wrapper p {
+    color: $white;
+    text-align: center;
+    font-size: $font-size-xvg;
+  }
+  .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: large;
+    font-weight: bolder;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -62,6 +70,13 @@
   .image {
     width: 100%;
     height: 300px;
+  }
+  .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: large;
+    font-weight: bolder;
   }
 }
 
@@ -71,6 +86,20 @@
     width: 100%;
     height: 500px;
   }
+  .loading {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    font-size: large;
+    font-weight: bolder;
+  }
+  .loading {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    font-size: large;
+    font-weight: bolder;
+  }
 }
 
 // large devices (large desktops, 1200px and up)
@@ -79,11 +108,47 @@
     width: 100%;
     height: 500px;
   }
+  .sale-wrapper {
+    background-color: $red;
+    height: 100%;
+  }
+  .sale-wrapper p {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 40%;
+    color: $white;
+    font-size: $font-size-vg;
+  }
+  .loading {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    font-size: large;
+    font-weight: bolder;
+  }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
   .image {
     width: 100%;
     height: 500px;
+  }
+  .sale-wrapper {
+    background-color: $red;
+    height: 100%;
+  }
+  .sale-wrapper p {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 40%;
+    color: $white;
+    font-size: $font-size-vg;
+  }
+  .loading {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    font-size: large;
+    font-weight: bolder;
   }
 }
