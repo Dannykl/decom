@@ -5,9 +5,6 @@ import Grid from "@material-ui/core/Grid";
 const FavouriteProducts = () => {
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Paper className="">xs=12</Paper>
-      </Grid>
       <Grid item xs={6}>
         <Paper className="">xs=6</Paper>
       </Grid>
