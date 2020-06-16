@@ -51,7 +51,7 @@ export class ProductsPage extends React.Component {
           </div>
         ) : (
           <div>
-            <div className="sale-wrapper">
+            <div className="sale-wrapper ">
               <p>SALE</p>
             </div>
             <div className="row">

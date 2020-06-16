@@ -9,7 +9,7 @@ import Footer from "./common/Footer";
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div>
       {/* <Header /> */}
       <Router history={history}>
         <Switch>
@@ -37,9 +37,13 @@ const Logout = Loadable({
   loader: () => import("../module/authentication/components/Logout"),
   loading: Loading
 });
+const FavouriteProducts = Loadable({
+  loader: () => import("../module/product/components/FavouriteProducts"),
+  loading: Loading
+});
 
 const DefaultContainer = () => (
-  <div className="container-fluid">
+  <div>
     <Header currentPath={history.location.pathname} />
     <Router history={history}>
       {/* <Router> */}
@@ -47,6 +51,7 @@ const DefaultContainer = () => (
         {/* <Route exact path="/" component={ProductListContainer} /> */}
         <Route exact path="/" component={Products} />
         <Route path="/log-out" component={Logout} />
+        <Route path="/favourite" component={FavouriteProducts} />
         {/* <Route component={DefaultContainer} /> */}
       </Switch>
     </Router>

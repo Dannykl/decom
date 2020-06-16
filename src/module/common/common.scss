@@ -25,32 +25,75 @@
   .header-search-wrapper {
     width: 100%;
   }
+  .brand-name-desktop {
+    display: none;
+  }
+  .brand-name-mobile {
+    padding-left: 3em;
+  }
+  .header-icons{
+    padding: 0;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {
+  .brand-name-desktop {
+    display: none;
+  }
+  .brand-name-mobile {
+    padding-left: 3em;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .brand-name-mobile {
+    display: none;
+  }
   .account-username {
     text-align: left;
   }
   .account-signup {
     text-align: left;
   }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 // Desk top small devices (small desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .brand-name-mobile {
+    display: none;
+  }
   .header-search {
     width: 100%;
     margin-right: 1%;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 // large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) and(max-width:1439px) {
+  .brand-name-mobile {
+    display: none;
+  }
   .footer-top {
     background-color: $light-grey;
     height: 4em;
@@ -85,10 +128,19 @@
   }
   .account-btn {
     text-align: center;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
+  .brand-name-mobile {
+    display: none;
+  }
   .footer-top {
     background-color: $light-grey;
     height: 4em;
@@ -105,6 +157,12 @@
   .post-loading svg {
     justify-content: center;
     width: 100%;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cart-icon:focus {
@@ -126,9 +184,6 @@
   }
 }
 
-.account {
-  padding-top: 10px;
-}
 .header-logo {
   margin-right: 2%;
 }

@@ -8,7 +8,7 @@ import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import LazyLoad from "react-lazyload";
 import { CircularProgress } from "@material-ui/core";
 
@@ -24,32 +24,62 @@ const ProductCard = ({ data, selectedProduct, isFavourite, favourClicked }) => {
         }
       >
         <Card>
-          <CardMedia onClick={() => selectedProduct(data)}>
-            <img src={data.image} alt="face mask" className="image" />
-          </CardMedia>
-          <div className="product-card-bottom">
-            <CardContent onClick={() => selectedProduct(data)}>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {data.description} {data.name}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {"£" + data.price}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing className="product-card-icons">
-              <IconButton
-                aria-label="add to favorites"
-                className="favorite-icon"
-                onClick={() => favourClicked(data)}
-                style={{ color: isFavourite ? "red" : "grey" }}
-              >
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton aria-label="share" className="share-icon">
-                <ShareIcon />
-              </IconButton>
-            </CardActions>
-          </div>
+          <CardMedia
+            onClick={() => selectedProduct(data)}
+            className="image"
+            image={data.image}
+            title={data.name}
+          />
+          <CardContent
+            style={{ height: "1.5em" }}
+            onClick={() => selectedProduct(data)}
+          >
+            <Typography
+              style={{ textAlign: "center" }}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
+              {"£" + data.price}
+            </Typography>
+            <Typography
+              style={{ textAlign: "center" }}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
+              {data.description} {data.name}
+            </Typography>
+          </CardContent>
+          <CardActions
+            style={{
+              color: isFavourite ? "red" : "grey",
+              height: "3em",
+              float: "right"
+            }}
+            disableSpacing
+          >
+            <IconButton
+              aria-label="add to favorites"
+              className="favorite-icon"
+              // onClick={() => addedIntoCart(data)}
+              style={{
+                color: isFavourite ? "green" : "grey"
+              }}
+            >
+              <AddShoppingCartIcon />
+            </IconButton>
+            <IconButton
+              aria-label="add to favorites"
+              className="favorite-icon"
+              onClick={() => favourClicked(data)}
+              style={{
+                color: isFavourite ? "red" : "grey"
+              }}
+            >
+              <FavoriteIcon />
+            </IconButton>
+          </CardActions>
         </Card>
       </LazyLoad>
     </div>
