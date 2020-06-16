@@ -7,6 +7,10 @@ import {
   addFaviourite,
   removeFaviourite
 } from "../state/actions/productFavouriteAction";
+import {
+  addProductToCart,
+  removeProductFromCart
+} from "../state/actions/productCartAction";
 import "../products.scss";
 import ProductCard from "./ProductCard";
 import * as constants from "../../../utils/constants";
@@ -26,6 +30,14 @@ export class ProductsPage extends React.Component {
   handleProductClick = aProduct => {
     console.log("product is clicked for product detail ", aProduct);
   };
+
+  handleCartClick = aProduct => {
+    const isAlreadyCart = this.isProductInCartList(aProduct);
+    isAlreadyCart
+      ? this.props.removeProductFromCart(aProduct)
+      : this.props.addProductToCart(aProduct);
+  };
+
   handleFavouriteClick = aProduct => {
     const isAlreadyLiked = this.isProductInFavouriteList(aProduct);
     isAlreadyLiked
@@ -35,8 +47,12 @@ export class ProductsPage extends React.Component {
 
   isProductInFavouriteList = aProduct => {
     const products = this.props.favouriteProducts;
-    const res =
-      products.favouriteProducts.filter(i => i.id == aProduct.id).length > 0;
+    const res = products.products.filter(i => i.id == aProduct.id).length > 0;
+    return res;
+  };
+  isProductInCartList = aProduct => {
+    const products = this.props.cartProducts;
+    const res = products.products.filter(i => i.id == aProduct.id).length > 0;
     return res;
   };
 
@@ -66,7 +82,9 @@ export class ProductsPage extends React.Component {
                     data={i}
                     selectedProduct={this.handleProductClick}
                     isFavourite={this.isProductInFavouriteList(i)}
+                    isItInCart={this.isProductInCartList(i)}
                     favourClicked={this.handleFavouriteClick}
+                    addedIntoCart={this.handleCartClick}
                   />
                 </div>
               ))}
@@ -85,7 +103,9 @@ const mapDispatchToProps = dispatch =>
     {
       fetchProducts,
       addFaviourite,
-      removeFaviourite
+      removeFaviourite,
+      addProductToCart,
+      removeProductFromCart
     },
     dispatch
   );
@@ -94,7 +114,10 @@ ProductsPage.propTypes = {
   fetchProducts: PropTypes.func,
   addFaviourite: PropTypes.func,
   removeFaviourite: PropTypes.func,
-  favouriteProducts: PropTypes.object
+  favouriteProducts: PropTypes.object,
+  cartProducts: PropTypes.object,
+  addProductToCart: PropTypes.func,
+  removeProductFromCart: PropTypes.func
 };
 export default connect(
   mapStateToProps,

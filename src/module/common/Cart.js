@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Badge from "@material-ui/core/Badge";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
@@ -13,12 +14,15 @@ const StyledBadge = withStyles(theme => ({
   }
 }))(Badge);
 
-export default function Cart() {
+export default function Cart({ val }) {
   return (
     <IconButton aria-label="cart" className="cart-icon">
-      <StyledBadge badgeContent={1} color="secondary">
+      <StyledBadge badgeContent={val} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>
   );
 }
+Cart.propTypes = {
+  val: PropTypes.number
+};
