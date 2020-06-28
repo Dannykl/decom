@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Link from "@material-ui/core/Link";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
@@ -102,6 +103,9 @@ export class SignIn extends React.Component {
               >
                 {logging ? "Logging..." : "Log in"}
               </Button>
+            </div>
+            <div style={{ textAlign: "center", paddingTop: "5px" }}>
+              <Link href="/signup">Signup?</Link>
             </div>
           </form>
         </div>

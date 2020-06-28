@@ -14,6 +14,7 @@ function App() {
       <Router history={history}>
         <Switch>
           <Route exact path="/login" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} />
           <Route component={DefaultContainer} />
         </Switch>
       </Router>
@@ -29,6 +30,10 @@ function Loading({ error }) {
   }
 }
 
+const SignUp = Loadable({
+  loader: () => import("../module/registration/SignUp"),
+  loading: Loading
+});
 const SignIn = Loadable({
   loader: () => import("../module/authentication/components/SignIn"),
   loading: Loading
@@ -41,6 +46,10 @@ const FavouriteProducts = Loadable({
   loader: () => import("../module/product/components/FavouriteProducts"),
   loading: Loading
 });
+const ProductShowContainer = Loadable({
+  loader: () => import("../module/product/containers/ProductShowContainer"),
+  loading: Loading
+});
 
 const DefaultContainer = () => (
   <div>
@@ -49,6 +58,7 @@ const DefaultContainer = () => (
       <Switch>
         {/* <Route exact path="/" component={ProductListContainer} /> */}
         <Route exact path="/" component={Products} />
+        <Route exact path="/products/:id" component={ProductShowContainer} />
         <Route path="/logout" component={Logout} />
         <Route path="/favourite" component={FavouriteProducts} />
         {/* <Route component={DefaultContainer} /> */}

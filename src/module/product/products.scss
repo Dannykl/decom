@@ -69,6 +69,11 @@
     font-size: large;
     font-weight: bolder;
   }
+  .price-section {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+  }
 }
 
 // Desk top small devices (small desktops, 992px and up)
@@ -90,6 +95,11 @@
     left: 50%;
     font-size: large;
     font-weight: bolder;
+  }
+  .price-section {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
   }
 }
 
@@ -117,6 +127,11 @@
     font-size: large;
     font-weight: bolder;
   }
+  .price-section {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+  }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
@@ -141,5 +156,10 @@
     left: 50%;
     font-size: large;
     font-weight: bolder;
+  }
+  .price-section {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
   }
 }

@@ -31,9 +31,12 @@
   .brand-name-mobile {
     padding-left: 3em;
   }
-  .header-icons{
+  .header-icons {
     padding: 0;
   }
+  // .carousel {
+  //   width: 100%;
+  // }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -50,7 +53,9 @@
     justify-content: center;
     align-items: center;
   }
-  
+  // .carousel {
+  //   width: 100%;
+  // }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -70,6 +75,9 @@
     justify-content: center;
     align-items: center;
   }
+  // .carousel-style {
+  //   width: 75%;
+  // }
 }
 
 // Desk top small devices (small desktops, 992px and up)
@@ -87,6 +95,9 @@
     justify-content: center;
     align-items: center;
   }
+  // .carousel-style {
+  //   width: 75%;
+  // }
 }
 
 // large devices (large desktops, 1200px and up)
@@ -135,6 +146,13 @@
     justify-content: center;
     align-items: center;
   }
+  // .carousel {
+  //   margin-left: 25%;
+  //   margin-right: 25%;
+  // }
+  // .carousel-style {
+  //   width: 100%;
+  // }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
@@ -182,8 +200,16 @@
   .account-btn {
     text-align: center;
   }
+  // .carousel {
+  //   margin-left: 25%;
+  //   margin-right: 25%;
+  // }
+  // .carousel-style {
+  //   width: 50%;
+  // }
 }
 
+// ALL SCREENS
 .header-logo {
   margin-right: 2%;
 }

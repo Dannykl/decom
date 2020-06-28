@@ -8,18 +8,11 @@ import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import LazyLoad from "react-lazyload";
-import { CircularProgress } from "@material-ui/core";
+// import LazyLoad from "react-lazyload";
+// import { CircularProgress } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
-const ProductCard = ({
-  data,
-  selectedProduct,
-  isFavourite,
-  isItInCart,
-  favourClicked,
-  addedIntoCart
-}) => {
+const ProductCard = ({ data, selectedProduct, isFavourite, favourClicked }) => {
   return (
     <div className="product-card-container">
       {/* <LazyLoad
@@ -37,10 +30,7 @@ const ProductCard = ({
           image={data.image}
           title={data.name}
         />
-        <CardContent
-          style={{ height: "1.5em" }}
-          onClick={() => selectedProduct(data)}
-        >
+        <CardContent onClick={() => selectedProduct(data)}>
           <Typography
             style={{ textAlign: "center" }}
             variant="body2"
@@ -50,7 +40,9 @@ const ProductCard = ({
             {"£" + data.price}
           </Typography>
           <Typography
-            style={{ textAlign: "center" }}
+            style={{
+              textAlign: "center"
+            }}
             variant="body2"
             color="textSecondary"
             component="p"
@@ -60,23 +52,26 @@ const ProductCard = ({
         </CardContent>
         <CardActions
           style={{
-            // color: isFavourite ? "red" : "grey",
-            height: "3em",
-            float: "right",
-            paddingTop: "5%"
+            paddingTop: "0%",
+            width: "100%",
+            justifyContent: "space-between"
           }}
           disableSpacing
         >
-          <IconButton
-            aria-label="add to favorites"
-            className="favorite-icon"
-            onClick={() => addedIntoCart(data)}
+          <Button
             style={{
-              color: isItInCart ? "green" : "grey"
+              color: "grey",
+              borderColor: "grey"
             }}
+            type="submit"
+            variant="outlined"
+            id="login-button"
+            color="primary"
+            onClick={() => selectedProduct(data)}
           >
-            <AddShoppingCartIcon />
-          </IconButton>
+            DETAILS
+          </Button>
+
           <IconButton
             aria-label="add to favorites"
             className="favorite-icon"

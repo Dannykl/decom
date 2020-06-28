@@ -2,19 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchProducts } from "../state/actions/productAction";
+import { fetchProducts } from "../state/actions/productsAction";
 import {
   addFaviourite,
   removeFaviourite
 } from "../state/actions/productFavouriteAction";
-import {
-  addProductToCart,
-  removeProductFromCart
-} from "../state/actions/productCartAction";
+// import {
+//   addProductToCart,
+//   removeProductFromCart
+// } from "../state/actions/productCartAction";
 import "../products.scss";
 import ProductCard from "../components/ProductCard";
 import * as constants from "../../../utils/constants";
 import { CircularProgress } from "@material-ui/core";
+import { history } from "../../../utils/history";
 
 export class ProductsPage extends React.Component {
   componentDidMount() {
@@ -24,14 +25,8 @@ export class ProductsPage extends React.Component {
   }
 
   handleProductClick = aProduct => {
+    history.push(`/products/${aProduct.id}`);
     console.log("product is clicked for product detail ", aProduct);
-  };
-
-  handleCartClick = aProduct => {
-    const isAlreadyCart = this.isProductInCartList(aProduct);
-    isAlreadyCart
-      ? this.props.removeProductFromCart(aProduct)
-      : this.props.addProductToCart(aProduct);
   };
 
   handleFavouriteClick = aProduct => {
@@ -46,11 +41,6 @@ export class ProductsPage extends React.Component {
     const res = products.products.filter(i => i.id == aProduct.id).length > 0;
     return res;
   };
-  isProductInCartList = aProduct => {
-    const products = this.props.cartProducts;
-    const res = products.products.filter(i => i.id == aProduct.id).length > 0;
-    return res;
-  };
 
   render() {
     const { availableProducts } = this.props;
@@ -62,11 +52,14 @@ export class ProductsPage extends React.Component {
           </div>
         ) : (
           <div>
+            {/* TODO THIS SHOULD BE MOVED TO ANOTHER COMPONENT */}
             <div className="sale-wrapper">
               <p>SALE</p>
             </div>
+            {/* TODO THIS SHOULD BE MOVED TO PRODUCTLIST COMPONENT */}
             <div className="row">
               {/* {this.props.availableProducts.products.map(i => ( */}
+
               {constants.productsObjs.products.map(i => (
                 <div
                   key={i.id}
@@ -77,9 +70,7 @@ export class ProductsPage extends React.Component {
                     data={i}
                     selectedProduct={this.handleProductClick}
                     isFavourite={this.isProductInFavouriteList(i)}
-                    isItInCart={this.isProductInCartList(i)}
                     favourClicked={this.handleFavouriteClick}
-                    addedIntoCart={this.handleCartClick}
                   />
                 </div>
               ))}
@@ -98,9 +89,7 @@ const mapDispatchToProps = dispatch =>
     {
       fetchProducts,
       addFaviourite,
-      removeFaviourite,
-      addProductToCart,
-      removeProductFromCart
+      removeFaviourite
     },
     dispatch
   );
@@ -109,10 +98,7 @@ ProductsPage.propTypes = {
   fetchProducts: PropTypes.func,
   addFaviourite: PropTypes.func,
   removeFaviourite: PropTypes.func,
-  favouriteProducts: PropTypes.object,
-  cartProducts: PropTypes.object,
-  addProductToCart: PropTypes.func,
-  removeProductFromCart: PropTypes.func
+  favouriteProducts: PropTypes.object
 };
 export default connect(
   mapStateToProps,

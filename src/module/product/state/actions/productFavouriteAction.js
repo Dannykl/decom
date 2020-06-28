@@ -1,7 +1,4 @@
-import {
-  FAVOURITE_ADD,
-  FAVOURITE_REMOVE
-} from "./actionsTypes";
+import { FAVOURITE_ADD, FAVOURITE_REMOVE } from "./actionsTypes";
 
 export function addFaviourite(data) {
   return {
@@ -16,24 +13,3 @@ export function removeFaviourite(data) {
     data
   };
 }
-
-// export const favouriteRequest = () => ({
-//   type: PRODUCT_FAVOURITE_REQUEST
-// });
-// export const favouriteSuccess = payload => ({
-//   type: PRODUCT_FAVOURITE_SUCCESS,
-//   payload: payload
-// });
-// export const favouriteFail = error => ({
-//   type: PRODUCT_FAVOURITE_FAIL,
-//   payload: error
-// });
-
-// export const manageFavouriteProduct = data => {
-//   return dispatch => {
-//     dispatch(favouriteRequest())
-//       .then(_ => dispatch(favouriteSuccess(data)))
-//       .catch(_ => dispatch(favouriteFail("error on favourite")));
-//   };
-// };
-// export const addProduct = () => {};
