@@ -2,10 +2,10 @@ import React from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Products from "./product/components/ProductsPage";
+import Products from "./product/containers/ProductsPage";
 import { history } from "../utils/history";
-import Header from "./common/Header";
-import Footer from "./common/Footer";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/* <Header /> */}
       <Router history={history}>
         <Switch>
-          <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/login" component={SignIn} />
           <Route component={DefaultContainer} />
         </Switch>
       </Router>
@@ -46,11 +46,10 @@ const DefaultContainer = () => (
   <div>
     <Header currentPath={history.location.pathname} />
     <Router history={history}>
-      {/* <Router> */}
       <Switch>
         {/* <Route exact path="/" component={ProductListContainer} /> */}
         <Route exact path="/" component={Products} />
-        <Route path="/log-out" component={Logout} />
+        <Route path="/logout" component={Logout} />
         <Route path="/favourite" component={FavouriteProducts} />
         {/* <Route component={DefaultContainer} /> */}
       </Switch>

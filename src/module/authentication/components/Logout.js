@@ -1,14 +1,17 @@
 import React from "react";
-import { reactLocalStorage } from "reactjs-localstorage";
-import { history } from "../../../utils/history";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutCurrentUser } from "../state/actions/signAction";
 
 class Logout extends React.Component {
   UNSAFE_componentWillMount() {
-    reactLocalStorage.remove("currentUser");
-    history.push("/");
+    this.props.dispatch(logoutCurrentUser());
   }
   render() {
     return null;
   }
 }
-export default Logout;
+Logout.propTypes = {
+  dispatch: PropTypes.func
+};
+export default connect()(Logout);

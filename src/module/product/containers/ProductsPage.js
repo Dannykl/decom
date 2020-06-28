@@ -12,15 +12,11 @@ import {
   removeProductFromCart
 } from "../state/actions/productCartAction";
 import "../products.scss";
-import ProductCard from "./ProductCard";
+import ProductCard from "../components/ProductCard";
 import * as constants from "../../../utils/constants";
 import { CircularProgress } from "@material-ui/core";
 
 export class ProductsPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     if (Object.keys(this.props.availableProducts.products).length == 0) {
       // this.props.fetchProducts();
@@ -58,7 +54,6 @@ export class ProductsPage extends React.Component {
 
   render() {
     const { availableProducts } = this.props;
-    console.log("props is ", this.props.favouriteProducts);
     return (
       <div className="container-fluid products-wrapper">
         {availableProducts.loadingProducts ? (
@@ -67,7 +62,7 @@ export class ProductsPage extends React.Component {
           </div>
         ) : (
           <div>
-            <div className="sale-wrapper ">
+            <div className="sale-wrapper">
               <p>SALE</p>
             </div>
             <div className="row">

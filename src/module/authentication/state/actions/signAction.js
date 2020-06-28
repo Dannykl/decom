@@ -1,6 +1,12 @@
-import { LOGGING_REQUEST, LOGGING_SUCCESS, LOGGING_FAIL } from "./actionsTypes";
+import {
+  LOGGING_REQUEST,
+  LOGGING_SUCCESS,
+  LOGGING_FAIL,
+  LOGOUT
+} from "./actionsTypes";
 import axios from "axios";
 import * as constants from "../../../../utils/constants";
+import history from "../../../common/history";
 
 export const loggingRequest = email => ({
   type: LOGGING_REQUEST,
@@ -15,6 +21,10 @@ export const loggingSuccess = payload => ({
 export const loggingFail = message => ({
   type: LOGGING_FAIL,
   payload: message
+});
+export const logout = () => ({
+  type: LOGOUT,
+  payload: null
 });
 
 export const signin = (_email, _password) => {
@@ -33,6 +43,11 @@ export const signin = (_email, _password) => {
   };
 };
 
+export function logoutCurrentUser() {
+  return function(dispatch) {
+    return dispatch(logout(), history.push("/"));
+  };
+}
 const processingData = (email, payload) => {
   let user = {
     userName: email,

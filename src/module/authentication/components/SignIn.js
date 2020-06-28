@@ -8,7 +8,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import "../signin.scss";
-import { reactLocalStorage } from "reactjs-localstorage";
 import Logo from "../../../assets/images/code.svg";
 import { signin } from "../state/actions/signAction";
 import { history } from "../../../utils/history";
@@ -29,10 +28,6 @@ export class SignIn extends React.Component {
 
   static getDerivedStateFromProps(props) {
     if (props.authentication.loggedIn) {
-      reactLocalStorage.setObject(
-        "currentUser",
-        props.authentication.currentUser
-      );
       history.push("/");
       return {};
     }
@@ -97,16 +92,17 @@ export class SignIn extends React.Component {
                 <p>{errorMessage}</p>
               </div>
             )}
-
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              id="login-button"
-              color="primary"
-            >
-              {logging ? "Logging..." : "Log in"}
-            </Button>
+            <div className="signin-btn">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                id="login-button"
+                color="primary"
+              >
+                {logging ? "Logging..." : "Log in"}
+              </Button>
+            </div>
           </form>
         </div>
       </Container>

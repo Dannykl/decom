@@ -2,15 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Logo from "../../assets/images/code.svg";
-import { Nav, Navbar, NavDropdown, FormControl, Button } from "react-bootstrap";
-import Cart from "./Cart";
-import Favourite from "./Favourite";
-import PermIdentityIcon from "@material-ui/icons/PermIdentity";
-import { reactLocalStorage } from "reactjs-localstorage";
-import SearchIcon from "@material-ui/icons/Search";
+import { Nav, Navbar } from "react-bootstrap";
+import Cart from "../common/Cart";
+import Favourite from "../common/Favourite";
 import { history } from "../../utils/history";
+import { InputBase, IconButton } from "@material-ui/core";
+import ClearIcon from "@material-ui/icons/Clear";
+import "./common.scss";
+import Button from "@material-ui/core/Button";
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: ""
+    };
+  }
   goTo = () => {
     history.push("/favourite");
   };
@@ -40,51 +47,25 @@ class Header extends React.Component {
           </div>
 
           <div className="header-search-container">
-            <FormControl
-              className="search-input"
-              type="text"
+            {this.state.searchQuery !== "" ? (
+              <IconButton
+                id="clear-btn"
+                size="small"
+                type="submit"
+                arial-label="search"
+              >
+                <ClearIcon />
+              </IconButton>
+            ) : null}
+            <InputBase
+              style={{ width: "100%" }}
+              id="search-input"
+              className="inputbase"
               placeholder="Search"
-              style={{ width: "90%" }}
+              onChange={e => this.setState({ searchQuery: e.target.value })}
             />
-            <Button
-              type="submit"
-              aria-label="search"
-              style={{ backgroundColor: "grey" }}
-            >
-              <SearchIcon />
-            </Button>
           </div>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav>
-              <NavDropdown
-                title={<PermIdentityIcon />}
-                id="basic-nav-dropdown"
-                className="account"
-              >
-                <Nav.Link href="#action/3.2" className="account-username">
-                  <Navbar.Text>
-                    {reactLocalStorage.getObject("currentUser").userName}
-                  </Navbar.Text>
-                </Nav.Link>
-                {Object.keys(reactLocalStorage.getObject("currentUser"))
-                  .length == 0 ? (
-                  <Nav.Link href="/signin" className="account-btn">
-                    <button type="button" className="btn btn-success">
-                      Login
-                    </button>
-                  </Nav.Link>
-                ) : (
-                  <Nav.Link href="/log-out" className="account-btn">
-                    <button type="button" className="btn btn-danger">
-                      Logout
-                    </button>
-                  </Nav.Link>
-                )}
-                <Nav.Link href="/signup" className="account-signup">
-                  <Navbar.Text>Signup</Navbar.Text>
-                </Nav.Link>
-              </NavDropdown>
-            </Nav>
             <Nav className="navbar-custom-nav">
               <Nav.Link
                 className="navbar-custom-link"
@@ -99,6 +80,32 @@ class Header extends React.Component {
               >
                 MASKS
               </Nav.Link>
+              <div className="login-signup-btn">
+                <Button
+                  id="login-signup-btn"
+                  variant="outlined"
+                  onClick={() => {
+                    this.props.loggedIn
+                      ? history.push("/logout")
+                      : history.push("/login");
+                  }}
+                >
+                  {this.props.loggedIn ? "LOGOUT" : "LOGIN"}
+                </Button>
+              </div>
+              {!this.props.loggedIn ? (
+                <div className="login-signup-btn">
+                  <Button
+                    id="login-signup-btn"
+                    variant="outlined"
+                    onClick={() => {
+                      history.push("/signup");
+                    }}
+                  >
+                    SIGNUP
+                  </Button>
+                </div>
+              ) : null}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -109,13 +116,16 @@ class Header extends React.Component {
 Header.propTypes = {
   currentPath: PropTypes.string,
   favourite: PropTypes.array,
-  cart: PropTypes.array
+  cart: PropTypes.array,
+  loggedIn: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     favourite: state.favouriteProducts.products,
-    cart: state.cartProducts.products
+    cart: state.cartProducts.products,
+    loggedIn: state.authentication.loggedIn,
+    currentUser: state.authentication.currentUser
   };
 };
 

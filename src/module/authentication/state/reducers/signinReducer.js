@@ -28,6 +28,13 @@ export default function authentication(state = initialState, action) {
         logging: false,
         errorMessage: action.payload
       };
+    case types.LOGOUT:
+      return {
+        logging: false,
+        loggedIn: false,
+        currentUser: {},
+        errorMessage: null
+      };
 
     default:
       return state;

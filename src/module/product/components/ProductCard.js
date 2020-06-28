@@ -62,7 +62,8 @@ const ProductCard = ({
           style={{
             // color: isFavourite ? "red" : "grey",
             height: "3em",
-            float: "right"
+            float: "right",
+            paddingTop: "5%"
           }}
           disableSpacing
         >

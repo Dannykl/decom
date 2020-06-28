@@ -4,11 +4,15 @@ import App from "./module/App";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./global_store/configureStore";
 import { Provider as ReduxProvider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-const store = configureStore();
+// const store = configureStore();
+const { persistor, store } = configureStore();
 render(
   <ReduxProvider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </ReduxProvider>,
   document.getElementById("app")
 );
