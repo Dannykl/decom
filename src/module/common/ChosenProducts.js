@@ -10,108 +10,75 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import "./common.scss";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-    marginTop: "20px",
-    width: "100%"
-  },
-
-  content: {
-    flex: "1 0 auto"
-  },
-  cover: {
-    width: 151
-  },
   controls: {
     display: "flex",
     alignItems: "center",
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(1)
-  },
-  playIcon: {
-    height: 38,
-    width: 38
   }
 }));
 
 const ChosenProducts = ({ data, prop }) => {
   const classes = useStyles();
-  const theme = useTheme();
-  // console.log("cart products ", prop);
+
   return (
     <>
-      <Card className={classes.root}>
+      <Card id="chosen-product-wrapper">
         <CardMedia
-          style={{ width: "15%" }}
-          className={classes.cover}
-          image={data.image}
+          id="chosen-product-image"
+          image={data.product.image}
           title="product image"
         />
-        <div className={classes.controls} style={{ width: "100%" }}>
-          <CardContent style={{ backgroundColor: "green", width: "50%" }}>
+        <div className={classes.controls} id="chosen-product-container">
+          <CardContent className="chosen-product-card-content">
             <Typography>
-              {data.description} {data.name}
+              {data.product.description} {data.product.name}
             </Typography>
             <Typography variant="subtitle1" color="textSecondary">
               brand
             </Typography>
           </CardContent>
-          <div
-            style={{
-              backgroundColor: "yellow",
-              width: "20%",
-              display: "flex"
-            }}
-          >
+          <div className="chosen-product-add-section">
             <IconButton
-              onClick={() => prop.decreament()}
-              disabled={prop.quantity < 2 ? true : false}
+              onClick={() => prop.decreament(data.product)}
+              disabled={data.quantity < 2 ? true : false}
               aria-label="previous"
             >
               <RemoveIcon />
             </IconButton>
             <Typography
-              style={{
-                paddingTop: "4%"
-              }}
+              className="chosen-product-quantity"
               variant="subtitle1"
               color="textSecondary"
             >
-              {prop.quantity}
+              {data.quantity}
             </Typography>
 
-            <IconButton onClick={() => prop.increament()} aria-label="previous">
+            <IconButton
+              onClick={() => prop.increament(data.product)}
+              aria-label="previous"
+            >
               <AddIcon />
             </IconButton>
           </div>
-          <div
-            style={{
-              backgroundColor: "red",
-              display: "flex"
-            }}
-          >
+          <div className="chosen-product-price-delete-section">
             <Typography
-              style={{
-                paddingTop: "2%",
-                marginRight: "10%"
-              }}
+              className="chosen-product-price"
               variant="subtitle1"
               color="textSecondary"
             >
-              {"£" + data.price * prop.quantity}
+              {"£" + data.product.price * data.quantity}
             </Typography>
 
             <Button
               onClick={() => prop.deleteProduct(data)}
               variant="contained"
               color="secondary"
-              className={classes.button}
               startIcon={<DeleteIcon />}
-              style={{
-                marginLeft: "5%"
-              }}
+              id="chosen-product-btn"
             >
               Delete
             </Button>
@@ -122,6 +89,7 @@ const ChosenProducts = ({ data, prop }) => {
   );
 };
 ChosenProducts.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  prop: PropTypes.object
 };
 export default ChosenProducts;

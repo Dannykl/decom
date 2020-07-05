@@ -4,47 +4,35 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CartList from "../components/CartList";
 import Nothing from "../../common/Nothing";
-import { removeProductFromCart } from "../../../store/actions/productCart";
+import {
+  removeProductFromCart,
+  increamentQuantity,
+  decreamentQuantity
+} from "../../../store/actions/productCart";
+import { cloning } from "../../../utils/cloning";
 
 class CartContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      quantity: 1
-    };
-  }
-  //delete item
   deleteProduct = product => {
     this.props.removeProductFromCart(product);
   };
-  increament = () => {
-    this.setState({
-      quantity: this.state.quantity + 1
-    });
+  increament = product => {
+    const operator = "add";
+    const newProducts = cloning(this.props.cartProducts, product, operator);
+    this.props.increamentQuantity(newProducts);
   };
-  decreament = () => {
-    this.setState({
-      quantity: this.state.quantity - 1
-    });
+  decreament = product => {
+    const operator = "";
+    const newProducts = cloning(this.props.cartProducts, product, operator);
+    this.props.increamentQuantity(newProducts);
   };
-  //ORDER
-  //product, quantity and price
-  // order :[
-  // item:
-  // quantity:
-  // price:
-  //]
 
   render() {
-    const { products } = this.props.cartProducts;
-    const { quantity } = this.state;
+    const products = this.props.cartProducts.products;
 
-    console.log("products cart ", products);
     return products.length > 0 ? (
       <CartList
         data={products}
         deleteProduct={this.deleteProduct}
-        quantity={quantity}
         increament={this.increament}
         decreament={this.decreament}
       />
@@ -56,7 +44,9 @@ class CartContainer extends React.Component {
 
 CartContainer.propTypes = {
   cartProducts: PropTypes.object,
-  removeProductFromCart: PropTypes.func
+  removeProductFromCart: PropTypes.func,
+  increamentQuantity: PropTypes.func,
+  decreamentQuantity: PropTypes.func
 };
 
 const mapStateToProps = state => ({ ...state });
@@ -64,7 +54,9 @@ const mapStateToProps = state => ({ ...state });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      removeProductFromCart
+      removeProductFromCart,
+      increamentQuantity,
+      decreamentQuantity
     },
     dispatch
   );

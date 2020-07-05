@@ -7,10 +7,6 @@ import {
   addFaviourite,
   removeFaviourite
 } from "../../../store/actions/productFavourite";
-// import {
-//   addProductToCart,
-//   removeProductFromCart
-// } from "../state/actions/productCartAction";
 import "../products.scss";
 import ProductCard from "../components/ProductCard";
 import * as constants from "../../../utils/constants";
@@ -26,7 +22,7 @@ export class ProductsPage extends React.Component {
 
   handleProductClick = aProduct => {
     history.push(`/products/${aProduct.id}`);
-    console.log("product is clicked for product detail ", aProduct);
+
   };
 
   handleFavouriteClick = aProduct => {

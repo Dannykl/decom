@@ -8,7 +8,7 @@ import Favourite from "../common/Favourite";
 import { history } from "../../utils/history";
 import { InputBase, IconButton } from "@material-ui/core";
 import ClearIcon from "@material-ui/icons/Clear";
-import "./common.scss";
+import "./header.scss";
 import Button from "@material-ui/core/Button";
 
 class Header extends React.Component {

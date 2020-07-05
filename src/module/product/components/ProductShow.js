@@ -10,6 +10,7 @@ class ProductShow extends Component {
   render() {
     const { data, isItInCart, addedIntoCart } = this.props;
     let images = [data.image, data.image, data.image];
+    
     return (
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>

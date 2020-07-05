@@ -3,6 +3,45 @@
 @import "../../styles/screen.scss";
 
 // Extra small devices (portrait phones, less than 576px)
+
+//TODO mobile screen should be reflected
+// @media (max-width: 375px) {
+//   #chosen-product-wrapper {
+//     width: 49%;
+//     // display: flex;
+//     margin-top: 20px;
+//     background-color: yellow;
+//   }
+
+//   #chosen-product-image {
+//     width: 0px;
+//   }
+//   #chosen-product-container {
+//     width: 100%;
+//   }
+
+//   .chosen-product-card-content {
+//     width: 35%;
+//   }
+//   .chosen-product-add-section {
+//     width: 20%;
+//     display: flex;
+//   }
+//   .chosen-product-quantity {
+//     padding-top: 12%;
+//   }
+//   .chosen-product-price-delete-section {
+//     display: flex;
+//     margin-left: 10%;
+//   }
+//   .chosen-product-price {
+//     padding-top: 2%;
+//     margin-right: 5%;
+//   }
+//   #chosen-product-btn {
+//     margin-left: 0%;
+//   }
+// }
 @media (max-width: 575.98px) {
   .header-search {
     width: 100%;
@@ -34,9 +73,41 @@
   .header-icons {
     padding: 0;
   }
-  // .carousel {
-  //   width: 100%;
-  // }
+
+  #chosen-product-wrapper {
+    width: 99%;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  #chosen-product-image {
+    width: 151px;
+  }
+  #chosen-product-container {
+    width: 100%;
+  }
+
+  .chosen-product-card-content {
+    width: 35%;
+  }
+  .chosen-product-add-section {
+    width: 20%;
+    display: flex;
+  }
+  .chosen-product-quantity {
+    padding-top: 12%;
+  }
+  .chosen-product-price-delete-section {
+    display: flex;
+    margin-left: 10%;
+  }
+  .chosen-product-price {
+    padding-top: 2%;
+    margin-right: 5%;
+  }
+  #chosen-product-btn {
+    margin-left: 0%;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -53,9 +124,40 @@
     justify-content: center;
     align-items: center;
   }
-  // .carousel {
-  //   width: 100%;
-  // }
+
+  #chosen-product-wrapper {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  #chosen-product-image {
+    width: 151px;
+  }
+  #chosen-product-container {
+    width: 100%;
+  }
+  .chosen-product-card-content {
+    width: 40%;
+  }
+  .chosen-product-add-section {
+    width: 20%;
+    display: flex;
+  }
+  .chosen-product-quantity {
+    padding-top: 10%;
+  }
+  .chosen-product-price-delete-section {
+    display: flex;
+    margin-left: 5%;
+  }
+  .chosen-product-price {
+    padding-top: 2%;
+    margin-right: 10%;
+  }
+  #chosen-product-btn {
+    margin-left: 5%;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -75,13 +177,46 @@
     justify-content: center;
     align-items: center;
   }
-  // .carousel-style {
-  //   width: 75%;
-  // }
+
+  #chosen-product-wrapper {
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+  }
+  #chosen-product-image {
+    width: 151px;
+  }
+  #chosen-product-wrapper {
+    width: 90%;
+    display: flex;
+  }
+  #chosen-product-container {
+    width: 100%;
+  }
+  .chosen-product-card-content {
+    width: 30%;
+  }
+  .chosen-product-add-section {
+    width: 20%;
+    display: flex;
+  }
+  .chosen-product-quantity {
+    padding-top: 8%;
+  }
+  .chosen-product-price-delete-section {
+    display: flex;
+  }
+  .chosen-product-price {
+    padding-top: 2%;
+    margin-right: 10%;
+  }
+  #chosen-product-btn {
+    margin-left: 5%;
+  }
 }
 
 // Desk top small devices (small desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1199.99px) {
   .brand-name-mobile {
     display: none;
   }
@@ -95,9 +230,38 @@
     justify-content: center;
     align-items: center;
   }
-  // .carousel-style {
-  //   width: 75%;
-  // }
+
+  #chosen-product-wrapper {
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+  }
+  #chosen-product-image {
+    width: 151px;
+  }
+  #chosen-product-container {
+    width: 100%;
+  }
+  .chosen-product-card-content {
+    width: 40%;
+  }
+  .chosen-product-add-section {
+    width: 20%;
+    display: flex;
+  }
+  .chosen-product-quantity {
+    padding-top: 8%;
+  }
+  .chosen-product-price-delete-section {
+    display: flex;
+  }
+  .chosen-product-price {
+    padding-top: 2%;
+    margin-right: 15%;
+  }
+  #chosen-product-btn {
+    margin-left: 5%;
+  }
 }
 
 // large devices (large desktops, 1200px and up)
@@ -137,13 +301,39 @@
     justify-content: center;
     align-items: center;
   }
-  // .carousel {
-  //   margin-left: 25%;
-  //   margin-right: 25%;
-  // }
-  // .carousel-style {
-  //   width: 100%;
-  // }
+
+  #chosen-product-wrapper {
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+  }
+  #chosen-product-image {
+    width: 151px;
+  }
+  #chosen-product-container {
+    width: 100%;
+  }
+  .chosen-product-card-content {
+    width: 40%;
+  }
+  .chosen-product-add-section {
+    width: 20%;
+    display: flex;
+  }
+  .chosen-product-quantity {
+    padding-top: 7%;
+  }
+  .chosen-product-price-delete-section {
+    display: flex;
+    margin-left: 5%;
+  }
+  .chosen-product-price {
+    padding-top: 2%;
+    margin-right: 10%;
+  }
+  #chosen-product-btn {
+    margin-left: 5%;
+  }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
@@ -182,13 +372,38 @@
   .account-btn {
     text-align: center;
   }
-  // .carousel {
-  //   margin-left: 25%;
-  //   margin-right: 25%;
-  // }
-  // .carousel-style {
-  //   width: 50%;
-  // }
+
+  #chosen-product-wrapper {
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+  }
+  #chosen-product-image {
+    width: 151px;
+  }
+  #chosen-product-container {
+    width: 100%;
+  }
+  .chosen-product-card-content {
+    width: 50%;
+  }
+  .chosen-product-add-section {
+    width: 20%;
+    display: flex;
+  }
+  .chosen-product-quantity {
+    padding-top: 4%;
+  }
+  .chosen-product-price-delete-section {
+    display: flex;
+  }
+  .chosen-product-price {
+    padding-top: 2%;
+    margin-right: 10%;
+  }
+  #chosen-product-btn {
+    margin-left: 5%;
+  }
 }
 
 // ALL SCREENS
@@ -205,9 +420,7 @@
 .navbar .nav-pills > li > a {
   color: black;
 }
-// .navbar .nav-pills > li > a:hover {
-//   border-bottom: 3px solid green;
-// }
+
 .header-nav a:hover {
   border-bottom: 3px solid green;
 }
@@ -216,10 +429,7 @@
   background-color: transparent;
   font-weight: bold;
 }
-// .navbar .nav-pills .active {
-//   background-color: transparent;
-//   font-weight: bold;
-// }
+
 .nothing {
   text-align: center;
   padding-top: 10%;

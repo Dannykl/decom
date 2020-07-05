@@ -17,20 +17,25 @@ class ProductShowContainer extends React.Component {
   }
 
   handleCartClick = aProduct => {
+    const item = { product: aProduct, quantity: 1 };
     const isAlreadyCart = this.isProductInCartList(aProduct);
     isAlreadyCart
-      ? this.props.removeProductFromCart(aProduct)
-      : this.props.addProductToCart(aProduct);
+      ? this.props.removeProductFromCart(item)
+      : this.props.addProductToCart(item);
   };
 
   isProductInCartList = aProduct => {
-    const products = this.props.cartProducts;
-    const res = products.products.filter(i => i.id == aProduct.id).length > 0;
-    return res;
+    const products = this.props.cartProducts.products;
+    if (this.props.cartProducts.products.length > 0) {
+      const res = products.filter(i => i.product.id === aProduct.id).length > 0;
+      return res;
+    }
+    return false;
   };
 
   render() {
     const { availableProductShow } = this.props;
+
     return (
       <div className="container-fluid products-wrapper">
         {availableProductShow.loadingProduct ? (
