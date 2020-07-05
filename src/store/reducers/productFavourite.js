@@ -1,4 +1,4 @@
-import { FAVOURITE_ADD, FAVOURITE_REMOVE } from "../actions/actionsTypes";
+import { FAVOURITE_ADD, FAVOURITE_REMOVE }  from "../actions/types";
 
 export const initialState = {
   products: []

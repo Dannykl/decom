@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import "../signin.scss";
 import Logo from "../../../assets/images/code.svg";
-import { signin } from "../state/actions/signAction";
+import { signin } from "../../../store/actions/signin";
 import { history } from "../../../utils/history";
 
 export class SignIn extends React.Component {

@@ -2,159 +2,233 @@
 @import "../../styles/fonts.scss";
 @import "../../styles/screen.scss";
 
+$icon-width: 30px;
+$icon-height: 30px;
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .footer-container {
-    background-color: $very-light-grey;
+    height: 50vh;
+    background-color: $black;
     margin-top: 10%;
+    position: relative;
   }
 
   .social-media-icon {
-    height: 15vh;
-    display: flex;
-    justify-content: space-between;
-    max-width: 5em;
-    margin: 0 auto;
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
+  }
+  #instagram {
+    margin-right: 3%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #twitter {
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #facebook {
+    margin-left: 3%;
+    width: $icon-width;
+    height: $icon-height;
   }
   .footer-bottom {
     height: 5vh;
-    background-color: $black;
+    background-color: $grey;
     height: 2em;
     text-align: center;
     color: $white;
+    bottom: 0;
+    position: absolute;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {
   .footer-container {
-    background-color: $very-light-grey;
+    height: 50vh;
+    background-color: $black;
     margin-top: 10%;
+    position: relative;
   }
 
   .social-media-icon {
-    height: 15vh;
-    display: flex;
-    justify-content: space-between;
-    max-width: 5em;
-    margin: 0 auto;
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
+  }
+  #instagram {
+    margin-right: 3%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #twitter {
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #facebook {
+    margin-left: 3%;
+    width: $icon-width;
+    height: $icon-height;
   }
   .footer-bottom {
     height: 5vh;
-    background-color: $black;
+    background-color: $grey;
     height: 2em;
     text-align: center;
     color: $white;
+    bottom: 0;
+    position: absolute;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
   .footer-container {
-    background-color: $very-light-grey;
+    height: 50vh;
+    background-color: $black;
     margin-top: 10%;
+    position: relative;
   }
 
   .social-media-icon {
-    height: 15vh;
-    display: flex;
-    justify-content: space-between;
-    max-width: 5em;
-    margin: 0 auto;
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
+  }
+  #instagram {
+    margin-right: 3%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #twitter {
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #facebook {
+    margin-left: 3%;
+    width: $icon-width;
+    height: $icon-height;
   }
   .footer-bottom {
     height: 5vh;
-    background-color: $black;
+    background-color: $grey;
     height: 2em;
     text-align: center;
     color: $white;
+    bottom: 0;
+    position: absolute;
   }
 }
 
 // Desk top small devices (small desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .footer-container {
-    background-color: $very-light-grey;
+    height: 50vh;
+    background-color: $black;
     margin-top: 10%;
+    position: relative;
   }
 
   .social-media-icon {
-    height: 15vh;
-    display: flex;
-    justify-content: space-between;
-    max-width: 5em;
-    margin: 0 auto;
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
+  }
+  #instagram {
+    margin-right: 2%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #twitter {
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #facebook {
+    margin-left: 2%;
+    width: $icon-width;
+    height: $icon-height;
   }
   .footer-bottom {
     height: 5vh;
-    background-color: $black;
+    background-color: $grey;
     height: 2em;
     text-align: center;
     color: $white;
+    bottom: 0;
+    position: absolute;
   }
 }
 
 // large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) and(max-width:1439px) {
-  .footer-top {
-    background-color: $light-grey;
-    height: 4em;
-    text-align: center;
-  }
-
   .footer-container {
+    height: 50vh;
     background-color: $black;
     margin-top: 10%;
-    height: 15vh;
+    position: relative;
   }
 
   .social-media-icon {
-    height: 90%;
-    display: flex;
-    justify-content: space-between;
-    max-width: 5em;
-    margin: 0 auto;
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
+    width: 100%;
+  }
+ 
+  #instagram {
+    margin-right: 2%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #twitter {
+    margin-right: 2%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #facebook {
+    width: $icon-width;
+    height: $icon-height;
   }
   .footer-bottom {
-    background-color: $black;
+    // background-color: $white;
     height: 10%;
     text-align: center;
     color: $white;
-    float: bottom;
+    bottom: 0;
+    position: absolute;
   }
 }
 // Extra large devices (extra large desktops, 1200px and up)
 @media (min-width: 1440px) {
   .footer-container {
+    height: 50vh;
     background-color: $black;
     margin-top: 10%;
-    height: 15vh;
+    position: relative;
   }
 
   .social-media-icon {
-    height: 15vh;
-    display: flex;
-    justify-content: space-between;
-    max-width: 5em;
-    margin: 0 auto;
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
+    width: 100%;
+  }
+  #instagram {
+    margin-right: 2%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #twitter {
+    margin-right: 2%;
+    width: $icon-width;
+    height: $icon-height;
+  }
+  #facebook {
+    width: $icon-width;
+    height: $icon-height;
   }
   .footer-bottom {
     height: 10vh;
-    background-color: $black;
+    background-color: $grey;
     height: 2em;
     text-align: center;
     color: $white;
+    bottom: 0;
+    position: absolute;
   }
 }

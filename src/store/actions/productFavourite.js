@@ -1,4 +1,4 @@
-import { FAVOURITE_ADD, FAVOURITE_REMOVE } from "./actionsTypes";
+import { FAVOURITE_ADD, FAVOURITE_REMOVE } from "./types";
 
 export function addFaviourite(data) {
   return {

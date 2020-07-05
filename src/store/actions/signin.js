@@ -3,10 +3,10 @@ import {
   LOGGING_SUCCESS,
   LOGGING_FAIL,
   LOGOUT
-} from "./actionsTypes";
+} from "./types";
 import axios from "axios";
-import * as constants from "../../../../utils/constants";
-import history from "../../../common/history";
+import * as constants from "../../utils/constants";
+import history from "../../module/common/history";
 
 export const loggingRequest = email => ({
   type: LOGGING_REQUEST,

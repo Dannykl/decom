@@ -105,16 +105,7 @@
   .brand-name-mobile {
     display: none;
   }
-  .footer-top {
-    background-color: $light-grey;
-    height: 4em;
-    text-align: center;
-  }
-  .footer-bottom {
-    background-color: $light-amber;
-    height: 2em;
-    text-align: center;
-  }
+
   .post-loading {
     justify-content: center;
   }
@@ -159,16 +150,7 @@
   .brand-name-mobile {
     display: none;
   }
-  .footer-top {
-    background-color: $light-grey;
-    height: 4em;
-    text-align: center;
-  }
-  .footer-bottom {
-    background-color: $light-amber;
-    height: 2em;
-    text-align: center;
-  }
+
   .post-loading {
     justify-content: center;
   }
@@ -238,3 +220,8 @@
 //   background-color: transparent;
 //   font-weight: bold;
 // }
+.nothing {
+  text-align: center;
+  padding-top: 10%;
+  font-weight: bold;
+}

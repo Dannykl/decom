@@ -9,8 +9,7 @@ import Footer from "./footer/Footer";
 
 function App() {
   return (
-    <div>
-      {/* <Header /> */}
+    <>
       <Router history={history}>
         <Switch>
           <Route exact path="/login" component={SignIn} />
@@ -18,7 +17,7 @@ function App() {
           <Route component={DefaultContainer} />
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
 
@@ -42,8 +41,12 @@ const Logout = Loadable({
   loader: () => import("../module/authentication/components/Logout"),
   loading: Loading
 });
-const FavouriteProducts = Loadable({
-  loader: () => import("../module/product/components/FavouriteProducts"),
+const FavouriteContainer = Loadable({
+  loader: () => import("../module/favourite/containers/FavouriteContainer"),
+  loading: Loading
+});
+const CartContainer = Loadable({
+  loader: () => import("../module/cart/containers/CartContainer"),
   loading: Loading
 });
 const ProductShowContainer = Loadable({
@@ -56,11 +59,11 @@ const DefaultContainer = () => (
     <Header currentPath={history.location.pathname} />
     <Router history={history}>
       <Switch>
-        {/* <Route exact path="/" component={ProductListContainer} /> */}
         <Route exact path="/" component={Products} />
         <Route exact path="/products/:id" component={ProductShowContainer} />
+        <Route path="/favourite" component={FavouriteContainer} />
+        <Route path="/cart" component={CartContainer} />
         <Route path="/logout" component={Logout} />
-        <Route path="/favourite" component={FavouriteProducts} />
         {/* <Route component={DefaultContainer} /> */}
       </Switch>
     </Router>

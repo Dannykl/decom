@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutCurrentUser } from "../state/actions/signAction";
+import { logoutCurrentUser } from "../../../store/actions/signin";
 
 class Logout extends React.Component {
   UNSAFE_componentWillMount() {

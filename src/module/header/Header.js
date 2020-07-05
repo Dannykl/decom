@@ -18,9 +18,7 @@ class Header extends React.Component {
       searchQuery: ""
     };
   }
-  goTo = () => {
-    history.push("/favourite");
-  };
+
   render() {
     const { currentPath } = this.props;
     return (
@@ -34,14 +32,14 @@ class Header extends React.Component {
           <Navbar.Brand href="/" className="brand-name-mobile">
             <Logo width={50} height={50} className="header-logo" />
           </Navbar.Brand>
-          <div style={{ display: "flex" }} onClick={() => this.goTo()}>
-            <Nav.Link style={{ padding: "0" }}>
+          <div style={{ display: "flex" }}>
+            <Nav.Link style={{ padding: "0" }} href="/favourite">
               <Favourite
                 val={this.props.favourite.length}
                 className="favourite-icon"
               />
             </Nav.Link>
-            <Nav.Link style={{ padding: "0" }}>
+            <Nav.Link href="/cart" style={{ padding: "0" }}>
               <Cart val={this.props.cart.length} className="cart-icon" />
             </Nav.Link>
           </div>

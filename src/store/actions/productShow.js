@@ -2,9 +2,9 @@ import {
   PRODUCT_SHOW_LOAD_REQUEST,
   PRODUCT_SHOW_LOAD_SUCCESS,
   PRODUCT_SHOW_LOAD_FAIL
-} from "./actionsTypes";
+} from "./types";
 import axios from "axios";
-import * as constants from "../../../../utils/constants";
+import * as constants from "../../utils/constants";
 
 export const productShowLoadingRequest = () => ({
   type: PRODUCT_SHOW_LOAD_REQUEST

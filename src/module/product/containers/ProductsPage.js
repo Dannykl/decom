@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchProducts } from "../state/actions/productsAction";
+import { fetchProducts } from "../../../store/actions/products";
 import {
   addFaviourite,
   removeFaviourite
-} from "../state/actions/productFavouriteAction";
+} from "../../../store/actions/productFavourite";
 // import {
 //   addProductToCart,
 //   removeProductFromCart

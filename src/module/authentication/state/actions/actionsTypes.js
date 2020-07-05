@@ -1,4 +1,0 @@
-export const LOGGING_REQUEST = "LOGGING_REQUEST";
-export const LOGGING_SUCCESS = "LOGGING_SUCCESS";
-export const LOGGING_FAIL = "LOGGING_FAIL";
-export const LOGOUT = "LOGOUT";
