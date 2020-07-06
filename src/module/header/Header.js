@@ -44,6 +44,7 @@ class Header extends React.Component {
             </Nav.Link>
           </div>
 
+          {/* {this.props.currentPath === "/" ? ( */}
           <div className="header-search-container">
             {this.state.searchQuery !== "" ? (
               <IconButton
@@ -63,6 +64,7 @@ class Header extends React.Component {
               onChange={e => this.setState({ searchQuery: e.target.value })}
             />
           </div>
+          {/* ) : null} */}
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="navbar-custom-nav">
               <Nav.Link
