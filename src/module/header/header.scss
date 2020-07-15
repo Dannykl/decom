@@ -49,6 +49,13 @@
   .header-icons {
     padding: 0;
   }
+  .header-logo {
+    padding-top: 5px;
+  }
+  .navbar-custom-nav-without-search {
+    text-align: center;
+    padding-top: 1em;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -80,6 +87,13 @@
     border: 1px solid $very-light-grey;
     border-radius: 13px;
   }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    text-align: center;
+    padding-top: 1em;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -110,6 +124,12 @@
   .login-signup-btn {
     padding-left: 7px;
   }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 43%;
+  }
 }
 
 // Desk top small devices (small desktops, 992px and up)
@@ -137,6 +157,12 @@
   }
   .login-signup-btn {
     padding-left: 7px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 50%;
   }
 }
 
@@ -175,12 +201,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //TODO need to add into other screens
     border: 1px solid $very-light-grey;
     border-radius: 13px;
   }
   .login-signup-btn {
     padding-left: 7px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 65%;
   }
 }
 // Extra large devices (extra large desktops, 1200px and up)
@@ -213,31 +244,22 @@
   .cart-icon:focus {
     outline: 0;
   }
-
-  // .account-signup {
-  //   text-align: center;
-  // }
-  // .account-btn {
-  //   text-align: center;
-  // }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 70%;
+  }
 }
 
-// .header-logo {
-//   margin-right: 2%;
-// }
-// .account-username {
-//   font-size: 0.9em;
-// }
-// .account-signuplink {
-//   text-align: center;
-//   font-size: 0.8em;
-// }
+//ALL SCREEN
+.cart-icon:focus {
+  outline: 0;
+}
 .navbar .nav-pills > li > a {
   color: black;
 }
-// .navbar .nav-pills > li > a:hover {
-//   border-bottom: 3px solid green;
-// }
+
 .header-nav a:hover {
   border-bottom: 3px solid green;
 }
@@ -246,7 +268,6 @@
   background-color: transparent;
   font-weight: bold;
 }
-// .navbar .nav-pills .active {
-//   background-color: transparent;
-//   font-weight: bold;
-// }
+.clear-btn:focus {
+  outline: 0;
+}

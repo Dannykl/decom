@@ -38,6 +38,7 @@ const ChosenProducts = ({ data, prop }) => {
             <div className="chosen-product-add-section">
               <ButtonGroup>
                 <Button
+                  className="chosen-product-decreament-button"
                   arial-label="increase"
                   onClick={() => prop.decreament(data.product)}
                   disabled={data.quantity < 2 ? true : false}
@@ -48,6 +49,7 @@ const ChosenProducts = ({ data, prop }) => {
                   {data.quantity}
                 </Button>
                 <Button
+                  className="chosen-product-increament-button"
                   arial-label="increase"
                   onClick={() => prop.increament(data.product)}
                 >

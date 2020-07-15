@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Logo from "../../assets/images/code.svg";
+import logo from "../../assets/images/logo.png";
 import { Nav, Navbar } from "react-bootstrap";
 import Cart from "../common/Cart";
 import Favourite from "../common/Favourite";
@@ -10,6 +10,8 @@ import { InputBase, IconButton } from "@material-ui/core";
 import ClearIcon from "@material-ui/icons/Clear";
 import "./header.scss";
 import Button from "@material-ui/core/Button";
+import { addSearch, removeSearch } from "../../store/actions/search";
+import { bindActionCreators } from "redux";
 
 class Header extends React.Component {
   constructor(props) {
@@ -19,18 +21,37 @@ class Header extends React.Component {
     };
   }
 
+  handleSearchBox = e => {
+    this.props.addSearch(e.target.value);
+  };
+  handleRemoveBox = () => {
+    this.props.removeSearch("");
+  };
   render() {
-    const { currentPath } = this.props;
+    const { currentPath, searchValue } = this.props;
+
     return (
       <div>
         <Navbar className="navbar" expand="md" id="custom-navbar">
           <Navbar.Brand href="/" className="brand-name-desktop">
-            <Logo width={50} height={50} className="header-logo" />
+            <img
+              width={100}
+              height={50}
+              src={logo}
+              alt="logo"
+              className="header-logo"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Navbar.Brand href="/" className="brand-name-mobile">
-            <Logo width={50} height={50} className="header-logo" />
+            <img
+              width={100}
+              height={50}
+              src={logo}
+              alt="logo"
+              className="header-logo"
+            />
           </Navbar.Brand>
           <div style={{ display: "flex" }}>
             <Nav.Link style={{ padding: "0" }} href="/favourite">
@@ -44,35 +65,44 @@ class Header extends React.Component {
             </Nav.Link>
           </div>
 
-          {/* {this.props.currentPath === "/" ? ( */}
-          <div className="header-search-container">
-            {this.state.searchQuery !== "" ? (
-              <IconButton
-                id="clear-btn"
-                size="small"
-                type="submit"
-                arial-label="search"
-              >
-                <ClearIcon />
-              </IconButton>
-            ) : null}
-            <InputBase
-              style={{ width: "100%" }}
-              id="search-input"
-              className="inputbase"
-              placeholder="Search"
-              onChange={e => this.setState({ searchQuery: e.target.value })}
-            />
-          </div>
-          {/* ) : null} */}
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="navbar-custom-nav">
+          {this.props.currentPath === "/" ? (
+            <div className="header-search-container">
+              <InputBase
+                style={{ width: "100%" }}
+                id="search-input"
+                className="inputbase"
+                placeholder="Search"
+                onChange={this.handleSearchBox}
+                value={searchValue}
+              />
+              {searchValue !== "" ? (
+                <IconButton
+                  className="clear-btn"
+                  id="clear-btn"
+                  size="small"
+                  type="submit"
+                  arial-label="search"
+                  onClick={this.handleRemoveBox}
+                >
+                  <ClearIcon />
+                </IconButton>
+              ) : null}
+            </div>
+          ) : null}
+          <Navbar.Collapse id="basic-navbar-nav" style={{ float: "right" }}>
+            <Nav
+              className={
+                this.props.currentPath === "/"
+                  ? "navbar-custom-nav"
+                  : "navbar-custom-nav-without-search"
+              }
+            >
               <Nav.Link
                 className="navbar-custom-link"
-                href="/sale"
-                active={currentPath == "/sale" ? "active" : ""}
+                href="/"
+                active={currentPath == "/" ? "active" : ""}
               >
-                SALE
+                HOME
               </Nav.Link>
               <Nav.Link
                 href="/masks"
@@ -117,7 +147,10 @@ Header.propTypes = {
   currentPath: PropTypes.string,
   favourite: PropTypes.array,
   cart: PropTypes.array,
-  loggedIn: PropTypes.bool
+  loggedIn: PropTypes.bool,
+  addSearch: PropTypes.func,
+  removeSearch: PropTypes.func,
+  searchValue: PropTypes.string
 };
 
 const mapStateToProps = state => {
@@ -125,8 +158,21 @@ const mapStateToProps = state => {
     favourite: state.favouriteProducts.products,
     cart: state.cartProducts.products,
     loggedIn: state.authentication.loggedIn,
-    currentUser: state.authentication.currentUser
+    currentUser: state.authentication.currentUser,
+    searchValue: state.search.value
   };
 };
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addSearch,
+      removeSearch
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

@@ -22,7 +22,6 @@ export class ProductsPage extends React.Component {
 
   handleProductClick = aProduct => {
     history.push(`/products/${aProduct.id}`);
-
   };
 
   handleFavouriteClick = aProduct => {
@@ -36,6 +35,14 @@ export class ProductsPage extends React.Component {
     const products = this.props.favouriteProducts;
     const res = products.products.filter(i => i.id == aProduct.id).length > 0;
     return res;
+  };
+
+  filterProducts = () => {
+    const { search, availableProducts } = this.props;
+    return constants.productsObjs.products.filter(p =>
+      // return availableProducts.products.filter(p =>
+      p.description.toLowerCase().includes(search.value.toLowerCase())
+    );
   };
 
   render() {
@@ -52,11 +59,8 @@ export class ProductsPage extends React.Component {
             <div className="sale-wrapper">
               <p>SALE</p>
             </div>
-            {/* TODO THIS SHOULD BE MOVED TO PRODUCTLIST COMPONENT */}
             <div className="row">
-              {/* {this.props.availableProducts.products.map(i => ( */}
-
-              {constants.productsObjs.products.map(i => (
+              {this.filterProducts().map(i => (
                 <div
                   key={i.id}
                   id="card-item"
@@ -70,6 +74,7 @@ export class ProductsPage extends React.Component {
                   />
                 </div>
               ))}
+              {/* <ProductsList data={constants.productsObjs.products} /> */}
             </div>
           </div>
         )}
@@ -94,7 +99,8 @@ ProductsPage.propTypes = {
   fetchProducts: PropTypes.func,
   addFaviourite: PropTypes.func,
   removeFaviourite: PropTypes.func,
-  favouriteProducts: PropTypes.object
+  favouriteProducts: PropTypes.object,
+  search: PropTypes.object
 };
 export default connect(
   mapStateToProps,

@@ -4,13 +4,17 @@ import availableProductShow from "./reducers/productShow";
 import favouriteProducts from "./reducers/productFavourite";
 import cartProducts from "./reducers/productCart";
 import authentication from "./reducers/signin";
+import search from "./reducers/search";
+import registerNewUser from "./reducers/signup";
 
 const rootReducer = combineReducers({
   availableProducts,
   availableProductShow,
   authentication,
   favouriteProducts,
-  cartProducts
+  cartProducts,
+  search,
+  registerNewUser
 });
 
 export default rootReducer;

@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import "../signin.scss";
-import Logo from "../../../assets/images/code.svg";
+import logo from "../../../assets/images/logo.png";
 import { signin } from "../../../store/actions/signin";
 import { history } from "../../../utils/history";
 
@@ -46,7 +46,12 @@ export class SignIn extends React.Component {
         <CssBaseline />
         <div>
           <Typography className="signin-home-logo" component="h1" variant="h5">
-            <Logo onClick={() => history.push("/")} width={150} height={70} />
+            <img
+              src={logo}
+              onClick={() => history.push("/")}
+              width={100}
+              height={50}
+            />
           </Typography>
           <Typography
             className="signin-home-header"

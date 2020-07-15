@@ -37,9 +37,12 @@
   }
 
   #chosen-product-wrapper {
-    width: 99%;
+    //  background-color: purple;
+    width: 98%;
     display: flex;
     margin-top: 20px;
+    padding-left: 5%;
+    margin-left: 1%;
   }
 
   #chosen-product-container {
@@ -60,6 +63,7 @@
   .chosen-product-second-section {
     width: 100%;
     display: flex;
+    height: 50px;
   }
 
   .chosen-product-quantity {
@@ -68,6 +72,8 @@
     font-weight: bolder;
   }
   .chosen-product-price-delete-section {
+    // background-color: yellow;
+    margin-bottom: 4%;
     display: flex;
     width: 100%;
     margin-left: 1%;
@@ -477,4 +483,10 @@
   text-align: center;
   padding-top: 10%;
   font-weight: bold;
+}
+.chosen-product-increament-button:focus {
+  outline: 0;
+}
+.chosen-product-decreament-button:focus {
+  outline: 0;
 }

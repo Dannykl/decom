@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../store/actions/signup";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -9,21 +11,63 @@ import Grid from "@material-ui/core/Grid";
 import { history } from "../../utils/history";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Logo from "../../assets/images/code.svg";
+import logo from "../../assets/images/logo.png";
+import Alert from "@material-ui/lab/Alert";
 import "./signin.scss";
 
-export default function SignUp() {
+const SignUp = () => {
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  });
+
+  const dispatch = useDispatch();
+  const registering = useSelector(state => state.registerNewUser.registering);
+  const registered = useSelector(state => state.registerNewUser.registered);
+  const errorMessage = useSelector(state => state.registerNewUser.errorMessage);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setUser(user => ({
+      ...user,
+      [name]: value
+    }));
+  };
+
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    if (
+      (user.email !== "") &
+      (user.password !== "") &
+      (user.firstName !== "") &
+      (user.lastName !== "")
+    ) {
+      const tempUser = {
+        email: user.email,
+        password: user.password
+      };
+      dispatch(register(tempUser));
+    }
+  };
+
   return (
     <Container className=" signup-container" component="main" maxWidth="xs">
       <CssBaseline />
       <div>
         <Typography className="signin-home-logo" component="h1" variant="h5">
-          <Logo onClick={() => history.push("/")} width={150} height={70} />
+          <img
+            src={logo}
+            onClick={() => history.push("/")}
+            width={100}
+            height={50}
+          />
         </Typography>
         <Typography className="signup-home-header" component="h1" variant="h5">
           Sign up
         </Typography>
-        <form noValidate className="signin">
+        <form noValidate className="signin" onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -35,6 +79,7 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -46,6 +91,7 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -57,6 +103,7 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -69,6 +116,7 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -79,8 +127,12 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary">
-            Sign Up
+            {registering ? "Signing up" : "Sign up"}
           </Button>
+          {errorMessage !== null ? (
+            <Alert severity="error">{errorMessage}</Alert>
+          ) : null}
+          {registered ? history.push("/") : null}
           <div style={{ textAlign: "center", paddingTop: "5px" }}>
             <Link href="/login">Signin?</Link>
           </div>
@@ -88,4 +140,5 @@ export default function SignUp() {
       </div>
     </Container>
   );
-}
+};
+export default SignUp;
