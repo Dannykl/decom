@@ -38,14 +38,15 @@ const SignIn = () => {
     setErrorAlert(false);
     e.preventDefault();
     if ((user.email !== "") & (user.password !== "")) {
-      dispatch(signin(user.email, user.password));
+      dispatch(signin(user));
     }
   };
 
   React.useEffect(() => {
-    // if (loggedIn) {
-    //   history.push("/");
-    // }
+    if (loggedIn) {
+      history.push("/");
+    }
+
     if ((errorMessage !== null) & !errorAlert) {
       setError(true);
       setErrorAlert(true);

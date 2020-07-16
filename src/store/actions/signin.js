@@ -20,26 +20,22 @@ export const loggingSuccess = payload => ({
 
 export const loggingFail = message => ({
   type: LOGGING_FAIL,
-  payload: message
+  payload: constants.incorrectDetails + message.response.statusText
 });
 export const logout = () => ({
   type: LOGOUT,
   payload: null
 });
 
-export const signin = (_email, _password) => {
-  let data = {
-    email: _email,
-    password: _password
-  };
+export const signin = data => {
   return dispatch => {
-    dispatch(loggingRequest(_email));
+    dispatch(loggingRequest(data.email));
     axios
       .post(constants.url + "/authenticate", data)
       .then(response =>
-        dispatch(loggingSuccess(processingData(_email, response)))
+        dispatch(loggingSuccess(processingData(data.email, response)))
       )
-      .catch(dispatch(loggingFail(constants.incorrectDetails)));
+      .catch(error => dispatch(loggingFail(error)));
   };
 };
 
