@@ -170,3 +170,5 @@ export const productsObjs = {
   loadedProducts: true,
   errorMessage: null
 };
+
+export const incorrectDetails = "Your email or password was incorrect";

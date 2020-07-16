@@ -16,6 +16,10 @@ import Alert from "@material-ui/lab/Alert";
 import "./signin.scss";
 
 const SignUp = () => {
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [alert, setAlert] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -37,6 +41,10 @@ const SignUp = () => {
   };
 
   const handleFormSubmit = e => {
+    setError(false);
+    setErrorAlert(false);
+    setSuccess(false);
+    setAlert(false);
     e.preventDefault();
     if (
       (user.email !== "") &
@@ -44,6 +52,7 @@ const SignUp = () => {
       (user.firstName !== "") &
       (user.lastName !== "")
     ) {
+      //TODO api should be updated to accomodate fName & lName
       const tempUser = {
         email: user.email,
         password: user.password
@@ -51,6 +60,24 @@ const SignUp = () => {
       dispatch(register(tempUser));
     }
   };
+
+  React.useEffect(() => {
+    if (registered & !alert) {
+      setSuccess(true);
+      setAlert(true);
+      setTimeout(() => {
+        setSuccess(false);
+        history.push("/login");
+      }, 3000);
+    }
+    if ((errorMessage !== null) & !errorAlert) {
+      setError(true);
+      setErrorAlert(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    }
+  });
 
   return (
     <Container className=" signup-container" component="main" maxWidth="xs">
@@ -129,10 +156,10 @@ const SignUp = () => {
           <Button type="submit" fullWidth variant="contained" color="primary">
             {registering ? "Signing up" : "Sign up"}
           </Button>
-          {errorMessage !== null ? (
-            <Alert severity="error">{errorMessage}</Alert>
+          {error ? <Alert severity="error">{errorMessage}</Alert> : null}
+          {success ? (
+            <Alert severity="success">Successfully Registered!</Alert>
           ) : null}
-          {registered ? history.push("/") : null}
           <div style={{ textAlign: "center", paddingTop: "5px" }}>
             <Link href="/login">Signin?</Link>
           </div>
