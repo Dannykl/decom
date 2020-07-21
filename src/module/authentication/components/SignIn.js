@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import "../signin.scss";
 import logo from "../../../assets/images/logo.png";
-import { signin } from "../../../store/actions/signin";
+import { signin } from "../../../actions/signin";
 import { history } from "../../../utils/history";
 import Alert from "@material-ui/lab/Alert";
 

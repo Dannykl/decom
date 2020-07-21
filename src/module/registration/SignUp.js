@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../store/actions/signup";
+import { register } from "../../actions/signup";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -20,6 +20,7 @@ const SignUp = () => {
   const [success, setSuccess] = useState(false);
   const [alert, setAlert] = useState(false);
   const [errorAlert, setErrorAlert] = useState(false);
+  const [inputVal, setInputVal] = useState("");
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -58,6 +59,11 @@ const SignUp = () => {
         password: user.password
       };
       dispatch(register(tempUser));
+    } else {
+      setInputVal("All fields must be completed!");
+      setTimeout(() => {
+        setInputVal("");
+      }, 3000);
     }
   };
 
@@ -157,6 +163,7 @@ const SignUp = () => {
             {registering ? "Signing up" : "Sign up"}
           </Button>
           {error ? <Alert severity="error">{errorMessage}</Alert> : null}
+          {inputVal != "" ? <Alert severity="error">{inputVal}</Alert> : null}
           {success ? (
             <Alert severity="success">Successfully Registered!</Alert>
           ) : null}

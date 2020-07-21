@@ -8,7 +8,7 @@ import {
   removeProductFromCart,
   increamentQuantity,
   decreamentQuantity
-} from "../../../store/actions/productCart";
+} from "../../../actions/productCart";
 import { cloning } from "../../../utils/cloning";
 
 class CartContainer extends React.Component {

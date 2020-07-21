@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ChosenProducts from "../../common/ChosenProducts";
-import Button from "@material-ui/core/Button";
+import CartSummary from "../components/CartSummary";
+import Grid from "@material-ui/core/Grid";
 
 class CartList extends React.Component {
   render() {
     const { data } = this.props;
+
     return (
-      <div style={{ width: "100%", display: "flex" }}>
-        <div style={{ backgroundColor: "purple", width: "100%" }}>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
           <React.Fragment>
             {data.map(each => {
               return (
@@ -20,19 +22,21 @@ class CartList extends React.Component {
               );
             })}
           </React.Fragment>
-        </div>
-        {/* <div
+        </Grid>
+        <Grid
           style={{
-            textAlign: "center",
-            marginTop: "15%",
-            width: "30%"
+            paddingRight: "5%"
           }}
+          item
+          xs={12}
+          sm={12}
+          md={4}
+          lg={4}
+          xl={4}
         >
-          <Button id="login-signup-btn" variant="outlined">
-            CHECK-OUT
-          </Button>
-        </div> */}
-      </div>
+          <CartSummary data={this.props.data} />
+        </Grid>
+      </Grid>
     );
   }
 }
