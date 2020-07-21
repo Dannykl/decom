@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
+import { history } from "../../../utils/history";
 import "../cart.scss";
 
 const CartSummary = ({ data }) => {
@@ -30,7 +31,11 @@ const CartSummary = ({ data }) => {
           <Typography>{"£" + sum}</Typography>
         </div>
       </Paper>
-      <Button className="cart-summary-btn" variant="outlined">
+      <Button
+        onClick={() => history.push("/user")}
+        className="cart-summary-btn"
+        variant="outlined"
+      >
         PROCEED
       </Button>
     </React.Fragment>

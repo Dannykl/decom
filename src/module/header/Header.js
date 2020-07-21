@@ -10,7 +10,7 @@ import { InputBase, IconButton } from "@material-ui/core";
 import ClearIcon from "@material-ui/icons/Clear";
 import "./header.scss";
 import Button from "@material-ui/core/Button";
-import { addSearch, removeSearch } from "../../store/actions/search";
+import { addSearch, removeSearch } from "../../actions/search";
 import { bindActionCreators } from "redux";
 
 class Header extends React.Component {

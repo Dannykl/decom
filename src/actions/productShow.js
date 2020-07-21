@@ -4,7 +4,7 @@ import {
   PRODUCT_SHOW_LOAD_FAIL
 } from "./types";
 import axios from "axios";
-import * as constants from "../../utils/constants";
+import * as constants from "../utils/constants";
 
 export const productShowLoadingRequest = () => ({
   type: PRODUCT_SHOW_LOAD_REQUEST

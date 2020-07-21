@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchProduct } from "../../../store/actions/productShow";
+import { fetchProduct } from "../../../actions/productShow";
 import { CircularProgress } from "@material-ui/core";
 import ProductShow from "../components/ProductShow";
 import {
   addProductToCart,
   removeProductFromCart
-} from "../../../store/actions/productCart";
+} from "../../../actions/productCart";
 
 class ProductShowContainer extends React.Component {
   componentDidMount() {

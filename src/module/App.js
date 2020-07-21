@@ -49,6 +49,10 @@ const CartContainer = Loadable({
   loader: () => import("../module/cart/containers/CartContainer"),
   loading: Loading
 });
+const UserContainer = Loadable({
+  loader: () => import("../module/user/containers/UserContainer"),
+  loading: Loading
+});
 const ProductShowContainer = Loadable({
   loader: () => import("../module/product/containers/ProductShowContainer"),
   loading: Loading
@@ -63,6 +67,7 @@ const DefaultContainer = () => (
         <Route exact path="/products/:id" component={ProductShowContainer} />
         <Route path="/favourite" component={FavouriteContainer} />
         <Route path="/cart" component={CartContainer} />
+        <Route path="/user" component={UserContainer} />
         <Route path="/logout" component={Logout} />
         {/* <Route component={DefaultContainer} /> */}
       </Switch>
