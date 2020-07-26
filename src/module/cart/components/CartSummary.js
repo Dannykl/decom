@@ -6,16 +6,16 @@ import Paper from "@material-ui/core/Paper";
 import { history } from "../../../utils/history";
 import "../cart.scss";
 
-const CartSummary = ({ data }) => {
+const CartSummary = ({ prop }) => {
   let sum = 0;
-  for (let i = 0; i < data.length; i++) {
-    sum += data[i].product.price * data[i].quantity;
+  for (let i = 0; i < prop.data.length; i++) {
+    sum += prop.data[i].product.price * prop.data[i].quantity;
   }
   return (
     <React.Fragment>
       <Paper className="cart-summary-wrapper">
         <Typography className="cart-summary-summary">{"Summary"}</Typography>
-        {data.map((each, key) => (
+        {prop.data.map((each, key) => (
           <div key={key}>
             <div className="cart-summary-content">
               {key < 1 ? <label>{"Sub total"}</label> : <label></label>}
@@ -32,7 +32,11 @@ const CartSummary = ({ data }) => {
         </div>
       </Paper>
       <Button
-        onClick={() => history.push("/user")}
+        onClick={
+          prop.isLoggedIn
+            ? () => history.push("/user")
+            : () => history.push("/login")
+        }
         className="cart-summary-btn"
         variant="outlined"
       >
@@ -43,6 +47,6 @@ const CartSummary = ({ data }) => {
 };
 
 CartSummary.propTypes = {
-  data: PropTypes.array
+  prop: PropTypes.object
 };
 export default CartSummary;

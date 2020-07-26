@@ -35,6 +35,7 @@ class CartContainer extends React.Component {
         deleteProduct={this.deleteProduct}
         increament={this.increament}
         decreament={this.decreament}
+        isLoggedIn={this.props.authentication.loggedIn}
       />
     ) : (
       <Nothing page={"CART"} />
@@ -44,6 +45,7 @@ class CartContainer extends React.Component {
 
 CartContainer.propTypes = {
   cartProducts: PropTypes.object,
+  authentication: PropTypes.object,
   removeProductFromCart: PropTypes.func,
   increamentQuantity: PropTypes.func,
   decreamentQuantity: PropTypes.func

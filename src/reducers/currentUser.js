@@ -1,16 +1,17 @@
-import * as types from "../actions/types";
+// TODO needs to be deleted
+// import * as types from "../actions/types";
 
-export const initialState = {
-  currentUser: {}
-};
-export default function currentUser(state = initialState, action) {
-  switch (action.type) {
-    case types.LOGGING_SUCCESS:
-      return {
-        currentUser: action.payload
-      };
+// export const initialState = {
+//   currentUser: {}
+// };
+// export default function currentUser(state = initialState, action) {
+//   switch (action.type) {
+//     case types.LOGGING_SUCCESS:
+//       return {
+//         currentUser: action.payload
+//       };
 
-    default:
-      return state;
-  }
-}
+//     default:
+//       return state;
+//   }
+// }

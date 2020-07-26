@@ -7,7 +7,6 @@ import Grid from "@material-ui/core/Grid";
 class CartList extends React.Component {
   render() {
     const { data } = this.props;
-
     return (
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
@@ -34,7 +33,9 @@ class CartList extends React.Component {
           lg={4}
           xl={4}
         >
-          <CartSummary data={this.props.data} />
+          <CartSummary
+            prop={this.props}
+          />
         </Grid>
       </Grid>
     );

@@ -10,7 +10,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistConfig = {
   key: "cartAndFavourite",
   storage: storage,
-  whitelist: ["cartProducts", "favouriteProducts", "currentUser"]
+  whitelist: ["cartProducts", "favouriteProducts", "authentication"]
 };
 const presistedReducer = persistReducer(persistConfig, rootReducer);
 
