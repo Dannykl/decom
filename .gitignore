@@ -15,7 +15,7 @@ thingsToDo.txt
 # production
 /build
 
-/utils/constants.js
+/src/utils/constants.js
 # misc
 .DS_Store
 .env.local
