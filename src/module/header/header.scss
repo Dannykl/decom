@@ -1,0 +1,273 @@
+@import "../../styles/colours.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/screen.scss";
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  #search-input {
+    padding-left: 10px;
+  }
+  .navbar-custom-nav {
+    text-align: center;
+    padding-top: 1em;
+  }
+  .login-signup-btn {
+    padding-top: 7px;
+  }
+  #login-signup-btn {
+    width: 10em;
+  }
+  .header-search {
+    width: 100%;
+  }
+  .header-nav li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .header-container {
+    text-align: center;
+    display: flex;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $very-light-grey;
+    border-radius: 13px;
+  }
+  .header-search-wrapper {
+    width: 100%;
+  }
+  .brand-name-desktop {
+    display: none;
+  }
+  .brand-name-mobile {
+    padding-left: 3em;
+  }
+  .header-icons {
+    padding: 0;
+  }
+  .header-logo {
+    padding-top: 5px;
+  }
+  .navbar-custom-nav-without-search {
+    text-align: center;
+    padding-top: 1em;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+  #search-input {
+    padding-left: 10px;
+  }
+  .navbar-custom-nav {
+    text-align: center;
+    padding-top: 1em;
+  }
+  .login-signup-btn {
+    padding-top: 7px;
+  }
+  #login-signup-btn {
+    width: 10em;
+  }
+  .brand-name-desktop {
+    display: none;
+  }
+  .brand-name-mobile {
+    padding-left: 3em;
+  }
+  .header-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $very-light-grey;
+    border-radius: 13px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    text-align: center;
+    padding-top: 1em;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #search-input {
+    padding-left: 10px;
+  }
+  .brand-name-mobile {
+    display: none;
+  }
+  .account-username {
+    text-align: left;
+  }
+  .account-signup {
+    text-align: left;
+  }
+  .header-search-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $very-light-grey;
+    border-radius: 13px;
+  }
+  .login-signup-btn {
+    padding-left: 7px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 43%;
+  }
+}
+
+// Desk top small devices (small desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #search-input {
+    padding-left: 10px;
+  }
+  .brand-name-mobile {
+    display: none;
+  }
+  .header-search {
+    width: 100%;
+    margin-right: 1%;
+  }
+  .header-search-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $very-light-grey;
+    border-radius: 13px;
+  }
+  .login-signup-btn {
+    padding-left: 7px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 50%;
+  }
+}
+
+// large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) and(max-width:1439px) {
+  .brand-name-mobile {
+    display: none;
+  }
+
+  .post-loading {
+    justify-content: center;
+  }
+  .post-loading svg {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cart-icon:focus {
+    outline: 0;
+  }
+
+  .account-signup {
+    text-align: center;
+  }
+  .account-btn {
+    text-align: center;
+  }
+  .inputbase {
+    padding-left: 10px;
+    width: 70%;
+  }
+  .header-search-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $very-light-grey;
+    border-radius: 13px;
+  }
+  .login-signup-btn {
+    padding-left: 7px;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 65%;
+  }
+}
+// Extra large devices (extra large desktops, 1200px and up)
+@media (min-width: 1440px) {
+  .brand-name-mobile {
+    display: none;
+  }
+
+  .post-loading {
+    justify-content: center;
+  }
+  .post-loading svg {
+    justify-content: center;
+    width: 100%;
+  }
+  .header-search-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $very-light-grey;
+    border-radius: 13px;
+  }
+  .login-signup-btn {
+    padding-left: 7px;
+  }
+
+  .cart-icon:focus {
+    outline: 0;
+  }
+  .header-logo {
+    padding-top: 10px;
+  }
+  .navbar-custom-nav-without-search {
+    padding-left: 70%;
+  }
+}
+
+//ALL SCREEN
+.cart-icon:focus {
+  outline: 0;
+}
+.navbar .nav-pills > li > a {
+  color: black;
+}
+
+.header-nav a:hover {
+  border-bottom: 3px solid green;
+}
+
+.header-nav .active {
+  background-color: transparent;
+  font-weight: bold;
+}
+.clear-btn:focus {
+  outline: 0;
+}
