@@ -21,9 +21,6 @@ const fail = error => {
 };
 
 export const register = newUser => {
-  //TODO THIS SHOULD BE RECEIVED FROM API on route "/"
-  const key = "061742fa04c8b99b23cf884869f49b8e";
-
   return dispatch => {
     dispatch(request());
 
@@ -38,7 +35,7 @@ export const register = newUser => {
 
     axios
       .get(
-        `https://apilayer.net/api/check?access_key=${key}&email=${newUser.email}`
+        `https://apilayer.net/api/check?access_key=${constants.key}&email=${newUser.email}`
       )
       .then(response => {
         isEmailValid(response)
