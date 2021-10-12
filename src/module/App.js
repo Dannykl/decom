@@ -34,9 +34,13 @@ const SignUp = Loadable({
   loading: Loading
 });
 const SignIn = Loadable({
-  loader: () => import("../module/authentication/components/SignIn"),
+  loader: () => import("../module/authentication/components/Login"),
   loading: Loading
 });
+// const SignIn = Loadable({
+//   loader: () => import("../module/authentication/components/SignIn"),
+//   loading: Loading
+// });
 const Logout = Loadable({
   loader: () => import("../module/authentication/components/Logout"),
   loading: Loading

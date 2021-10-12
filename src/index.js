@@ -5,7 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import configureStore from "./store/configureStore";
 import { Provider as ReduxProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-
+//TODO the build generates a lot of bundle files
 // const store = configureStore();
 const { persistor, store } = configureStore();
 render(
